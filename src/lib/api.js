@@ -2,6 +2,7 @@ const TMDB_DOMAIN = "https://api.themoviedb.org/3";
 const API_KEY = "e771c8f2e777b71534e7f5feb2c49c8a";
 
 //trending videos
+
 export const getTrending = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/trending/all/day?api_key=${API_KEY}`
@@ -19,7 +20,7 @@ export const getTrending = async () => {
 //popular movies
 export const getPopularMovies = async () => {
   const response = await fetch(
-    `${TMDB_DOMAIN}3/movie/popular??api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
   );
 
   if (!response.ok) {
@@ -34,7 +35,7 @@ export const getPopularMovies = async () => {
 //popular TV
 export const getPopularTV = async () => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/3/tv/popular?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/tv/popular?api_key=${API_KEY}&language=en-US&page=1`
   );
 
   if (!response.ok) {
@@ -47,9 +48,9 @@ export const getPopularTV = async () => {
 };
 
 //top rated
-export const topRatedMovies = async () => {
+const getTopRatedMovies = async () => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
   );
   if (!response.ok) {
     throw new Error("No top rated movies");
@@ -62,7 +63,7 @@ export const topRatedMovies = async () => {
 };
 
 //top rated shows
-export const topRatedTv = async () => {
+const getTopRatedTv = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
   );
@@ -75,3 +76,13 @@ export const topRatedTv = async () => {
   const { results } = data;
   return results;
 };
+
+const TmdbApi = {
+  getTrending,
+  getPopularMovies,
+  getPopularTV,
+  getTopRatedMovies,
+  getTopRatedTv,
+};
+
+export default TmdbApi;
