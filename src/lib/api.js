@@ -48,7 +48,7 @@ export const getPopularTV = async () => {
 };
 
 //top rated
-const getTopRatedMovies = async () => {
+export const getTopRatedMovies = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
   );
@@ -63,15 +63,41 @@ const getTopRatedMovies = async () => {
 };
 
 //top rated shows
-const getTopRatedTv = async () => {
+export const getTopRatedTv = async () => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
   );
 
   if (!response.ok) {
     throw new Error("No top rated tv shows");
   }
 
+  const data = await response.json();
+  const { results } = data;
+  return results;
+};
+
+//upcoming movies
+export const getUpcomingMovies = async () => {
+  const response = await fetch(
+    `${TMDB_DOMAIN}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+  );
+  if (!response.ok) {
+    throw new Error("No upcoming yet");
+  }
+  const data = await response.json();
+  const { results } = data;
+  return results;
+};
+
+//on the air
+export const getOntheAir = async () => {
+  const response = await fetch(
+    `${TMDB_DOMAIN}/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1`
+  );
+  if (!response.ok) {
+    throw new Error("No upcoming yet");
+  }
   const data = await response.json();
   const { results } = data;
   return results;

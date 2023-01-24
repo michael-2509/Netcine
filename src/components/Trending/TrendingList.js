@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import TrendingItem from "./TrendingItem";
 
-const TrendingList = ({ data }) => {
+const TrendingList = ({ data, title }) => {
   return (
     <>
       <section className="px-4 text-white">
         <div className="flex justify-between">
           {" "}
-          <h2 className="text-xl font-light text-white">Trending </h2>
+          <h2 className="text-xl font-light text-white">{title}</h2>
           <Link to="/">See More</Link>
         </div>
 
