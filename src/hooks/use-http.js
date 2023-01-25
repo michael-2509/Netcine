@@ -41,7 +41,6 @@ const useHttp = (requestFunction, startWithPending = false) => {
       const responseData = await requestFunction();
       dispatchFn({ type: "SUCCESS", responseData });
     } catch (error) {
-      console.log("error");
       dispatchFn({
         type: "ERROR",
         errorMessage: error.Message || "something went wrong!",

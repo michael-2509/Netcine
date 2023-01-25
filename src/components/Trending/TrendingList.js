@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import TrendingItem from "./TrendingItem";
 
-const TrendingList = ({ data, title }) => {
+const TrendingList = ({ data, title, isTrending, isHomePage }) => {
+  const slicedData = data.slice(0, 10);
+
   return (
     <>
       <section className="px-4 text-white">
@@ -11,9 +13,14 @@ const TrendingList = ({ data, title }) => {
           <Link to="/">See More</Link>
         </div>
 
-        <div className=" flex gap-4 overflow-x-scroll">
-          {data.map((item) => (
+        <div
+          className={
+            isTrending ? "flex gap-4 overflow-x-scroll" : "grid grid-cols-2 "
+          }
+        >
+          {slicedData.map((item) => (
             <TrendingItem
+              isTrending={isTrending}
               key={item.id}
               image={item.backdrop_path}
               media_type={item.media_type}

@@ -1,17 +1,21 @@
 import movie from "../../assets/icon-category-movie.svg";
 import tv from "../../assets/icon-category-tv.svg";
 
-const Trending = ({ image, media_type, title, year }) => {
+const Trending = ({ image, media_type, title, year, isTrending }) => {
   return (
     <>
       <section>
         <div>
           <img
-            className="h-[140px] w-60 max-w-none rounded-lg "
+            className={
+              isTrending
+                ? " h-[140px] w-60 max-w-none rounded-lg object-cover"
+                : "h-[110px] w-[164px] max-w-none rounded-lg object-cover"
+            }
             src={`${"https://image.tmdb.org/t/p/w500/"}${image}`}
             alt="images"
           />
-          <article className="relative bottom-16 left-2">
+          <article className={isTrending ? "relative bottom-16 left-2" : ""}>
             <div>
               <div className="flex items-center ">
                 {" "}

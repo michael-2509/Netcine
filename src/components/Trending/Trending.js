@@ -4,7 +4,7 @@ import useHttp from "../../hooks/use-http";
 
 import TrendingList from "./TrendingList";
 
-const Trending = ({ endPoint, title }) => {
+const Trending = ({ endPoint, title, isTrending }) => {
   const {
     sendRequest,
     data: trendingData,
@@ -28,7 +28,9 @@ const Trending = ({ endPoint, title }) => {
     return <p className="text-white">No loaded movies</p>;
   }
 
-  return <TrendingList data={trendingData} title={title} />;
+  return (
+    <TrendingList data={trendingData} title={title} isTrending={isTrending} />
+  );
 };
 
 export default Trending;
