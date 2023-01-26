@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import useHttp from "../../hooks/use-http";
 // import TmdbApi from "../../lib/api";
 
-import TrendingList from "./TrendingList";
+import CollectionList from "./CollectionList";
 
 const Trending = ({ endPoint, title, isTrending }) => {
   const {
@@ -29,7 +29,7 @@ const Trending = ({ endPoint, title, isTrending }) => {
   }
 
   return (
-    <TrendingList data={trendingData} title={title} isTrending={isTrending} />
+    <CollectionList data={trendingData} title={title} isTrending={isTrending} />
   );
 };
 

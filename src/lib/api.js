@@ -1,3 +1,5 @@
+import { slicedArray } from "../utils";
+
 const TMDB_DOMAIN = "https://api.themoviedb.org/3";
 const API_KEY = "e771c8f2e777b71534e7f5feb2c49c8a";
 
@@ -14,6 +16,7 @@ export const getTrending = async () => {
 
   const data = await response.json();
   const { results } = data;
+
   return results;
 };
 
@@ -29,7 +32,8 @@ export const getPopularMovies = async () => {
 
   const data = await response.json();
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 //popular TV
@@ -44,7 +48,8 @@ export const getPopularTV = async () => {
 
   const data = await response.json();
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 //top rated
@@ -59,7 +64,8 @@ export const getTopRatedMovies = async () => {
   const data = await response.json();
 
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 //top rated shows
@@ -74,7 +80,8 @@ export const getTopRatedTv = async () => {
 
   const data = await response.json();
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 //upcoming movies
@@ -87,7 +94,8 @@ export const getUpcomingMovies = async () => {
   }
   const data = await response.json();
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 //on the air
@@ -100,7 +108,8 @@ export const getOntheAir = async () => {
   }
   const data = await response.json();
   const { results } = data;
-  return results;
+  const newResultS = slicedArray(results);
+  return newResultS;
 };
 
 const TmdbApi = {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import TrendingItem from "./TrendingItem";
+import CollectionItem from "./CollectionItem";
 
-const TrendingList = ({ data, title, isTrending, isHomePage }) => {
+const CollectionList = ({ data, title, isTrending, isHomePage }) => {
   const slicedData = data.slice(0, 10);
 
   return (
@@ -19,7 +19,7 @@ const TrendingList = ({ data, title, isTrending, isHomePage }) => {
           }
         >
           {slicedData.map((item) => (
-            <TrendingItem
+            <CollectionItem
               isTrending={isTrending}
               key={item.id}
               image={item.backdrop_path}
@@ -34,4 +34,4 @@ const TrendingList = ({ data, title, isTrending, isHomePage }) => {
   );
 };
 
-export default TrendingList;
+export default CollectionList;

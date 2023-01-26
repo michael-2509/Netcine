@@ -1,7 +1,7 @@
 import movie from "../../assets/icon-category-movie.svg";
 import tv from "../../assets/icon-category-tv.svg";
 
-const Trending = ({ image, media_type, title, year, isTrending }) => {
+const CollectionItem = ({ image, media_type, title, year, isTrending }) => {
   return (
     <>
       <section>
@@ -41,4 +41,4 @@ const Trending = ({ image, media_type, title, year, isTrending }) => {
   );
 };
 
-export default Trending;
+export default CollectionItem;

@@ -1,6 +1,6 @@
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
-import Trending from "../../components/Trending/Trending";
+import Collection from "../../components/Collection/Collection";
 import {
   getTrending,
   getPopularMovies,
@@ -16,43 +16,43 @@ const Home = () => {
     <>
       <NavBar />
       <SearchBar />
-      <Trending isTrending endPoint={getTrending} title="Trending" />
-      <Trending
+      <Collection isTrending endPoint={getTrending} title="Trending" />
+      <Collection
         isHomePage
         category="popular"
         endPoint={getPopularMovies}
         title="Popular"
         type="movie"
       />
-      <Trending
+      <Collection
         isHomePage
         category="popular"
         endPoint={getPopularTV}
         title="Popular"
         type="tv"
       />
-      <Trending
+      <Collection
         isHomePage
         category="top rated"
         endPoint={getTopRatedMovies}
         title="Top Rated"
         type="movie"
       />
-      <Trending
+      <Collection
         isHomePage
         category="top rated"
         endPoint={getTopRatedTv}
         title="Top Rated"
         type="tv"
       />
-      <Trending
+      <Collection
         isHomePage
         category="upcoming"
         endPoint={getUpcomingMovies}
         title="Upcoming"
         type="movie"
       />
-      <Trending
+      <Collection
         isHomePage
         category="On the Air"
         endPoint={getOntheAir}
