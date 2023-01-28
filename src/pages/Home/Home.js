@@ -10,13 +10,19 @@ import {
   getUpcomingMovies,
   getOntheAir,
 } from "../../lib/api";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const Home = () => {
   return (
-    <>
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
       <NavBar />
       <SearchBar />
-      <Collection isTrending endPoint={getTrending} title="Trending" />
+      <Collection
+        isTrending
+        endPoint={getTrending}
+        title="Trending"
+        type="both"
+      />
       <Collection
         isHomePage
         category="popular"
@@ -59,7 +65,7 @@ const Home = () => {
         title="On the Air"
         type="tv"
       />
-    </>
+    </SkeletonTheme>
   );
 };
 

@@ -1,34 +1,33 @@
-import { Link } from "react-router-dom";
+import Header from "../Header";
 import CollectionItem from "./CollectionItem";
 
-const CollectionList = ({ data, title, isTrending, isHomePage }) => {
-  const slicedData = data.slice(0, 10);
-
+const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
+  console.log(data);
   return (
     <>
-      <section className="px-4 text-white">
-        <div className="flex justify-between">
-          {" "}
-          <h2 className="text-xl font-light text-white">{title}</h2>
-          <Link to="/">See More</Link>
-        </div>
+      <section className="mb-5 px-4 text-white ">
+        <Header type={type} title={title} />
 
-        <div
+        <section
           className={
-            isTrending ? "flex gap-4 overflow-x-scroll" : "grid grid-cols-2 "
+            isTrending
+              ? "flex gap-4 overflow-x-scroll"
+              : "grid grid-cols-2 gap-x-4"
           }
         >
-          {slicedData.map((item) => (
-            <CollectionItem
-              isTrending={isTrending}
-              key={item.id}
-              image={item.backdrop_path}
-              media_type={item.media_type}
-              title={item.original_title || item.original_name}
-              year={item.realease_year || item.air_on_first}
-            />
+          {data.map((item) => (
+            <>
+              <CollectionItem
+                isTrending={isTrending}
+                key={item.id}
+                image={item.backdrop_path || item.poster_path}
+                media_type={item.media_type}
+                title={item.original_title || item.original_name}
+                year={item.release_date || item.first_air_date}
+              />
+            </>
           ))}
-        </div>
+        </section>
       </section>
     </>
   );

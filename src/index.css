@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+
+
 @layer base {
   body {
     @apply bg-dark-blue
+  }
+  
+  /* I used layer component because outfit is not a default font family */
+  @layer components {
+    body {
+      font-family: 'outfit';
+    }
   }
 
 }

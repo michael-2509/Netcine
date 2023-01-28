@@ -1,35 +1,35 @@
 import React, { useEffect } from "react";
 import useHttp from "../../hooks/use-http";
-// import TmdbApi from "../../lib/api";
+import CardSkeleton from "../CardSkeleton";
 
 import CollectionList from "./CollectionList";
 
-const Trending = ({ endPoint, title, isTrending }) => {
-  const {
-    sendRequest,
-    data: trendingData,
-    error,
-    status,
-  } = useHttp(endPoint, true);
+const Trending = ({ endPoint, title, isTrending, type }) => {
+  const { sendRequest, data, error, status } = useHttp(endPoint, true);
 
   useEffect(() => {
     sendRequest();
   }, [sendRequest]);
 
   if (status === "pending") {
-    return <p className="text-center text-white">Loading...</p>;
+    return <CardSkeleton isTrending={isTrending} />;
   }
 
   if (error) {
     return <p className="text-center text-white">{error}</p>;
   }
 
-  if (status === "complete" && (!trendingData || trendingData.length < 0)) {
+  if (status === "complete" && (!data || data.length < 0)) {
     return <p className="text-white">No loaded movies</p>;
   }
 
   return (
-    <CollectionList data={trendingData} title={title} isTrending={isTrending} />
+    <CollectionList
+      data={data}
+      title={title}
+      isTrending={isTrending}
+      type={type}
+    />
   );
 };
 
