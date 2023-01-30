@@ -24,6 +24,7 @@ const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
                 media_type={item.media_type}
                 title={item.original_title || item.original_name}
                 year={item.release_date || item.first_air_date}
+                type={type}
               />
             </>
           ))}

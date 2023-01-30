@@ -1,7 +1,14 @@
 import movie from "../../assets/icon-category-movie.svg";
 import tv from "../../assets/icon-category-tv.svg";
 
-const CollectionItem = ({ image, media_type, title, year, isTrending }) => {
+const CollectionItem = ({
+  image,
+  media_type,
+  title,
+  type,
+  year,
+  isTrending,
+}) => {
   return (
     <>
       <article className="mb-5">
@@ -23,10 +30,10 @@ const CollectionItem = ({ image, media_type, title, year, isTrending }) => {
                   {year.slice(0, 4)}
                 </p>
                 <div className=" flex items-center gap-2  before:content-['•']">
-                  {media_type === "movie" ? (
+                  {(media_type || type) === "movie" ? (
                     <div className="flex items-center gap-2">
                       <img src={movie} alt="movies" />
-                      <p className="text-xs font-light opacity-75">Movies</p>
+                      <p className="text-xs font-light opacity-75">Movie</p>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
