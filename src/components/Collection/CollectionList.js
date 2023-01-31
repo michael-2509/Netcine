@@ -2,7 +2,6 @@ import Header from "../Header";
 import CollectionItem from "./CollectionItem";
 
 const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
-  console.log(data);
   return (
     <>
       <section className="mb-5 px-4 text-white ">
@@ -18,8 +17,8 @@ const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
           {data.map((item) => (
             <>
               <CollectionItem
-                isTrending={isTrending}
                 key={item.id}
+                isTrending={isTrending}
                 image={item.backdrop_path || item.poster_path}
                 media_type={item.media_type}
                 title={item.original_title || item.original_name}

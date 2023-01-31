@@ -16,6 +16,23 @@
       font-family: 'outfit';
     }
 
+    .heading-lg {
+      @apply text-heading-lg font-light;
+    }
+  
+    .heading-md {
+      @apply text-heading-md font-light;
+    }
+  
+    .heading-sm {
+      @apply text-heading-md font-medium;
+    }
+  
+    .heading-xs {
+      @apply text-heading-xs font-medium;
+    }
+  
+
     
   /* Custom horizontal scroll for trending section */
   .h-scroll::-webkit-scrollbar {

@@ -4,7 +4,6 @@ const TMDB_DOMAIN = "https://api.themoviedb.org/3";
 const API_KEY = "e771c8f2e777b71534e7f5feb2c49c8a";
 
 //trending videos
-
 export const getTrending = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/trending/all/day?api_key=${API_KEY}`
@@ -32,8 +31,8 @@ export const getPopularMovies = async () => {
 
   const data = await response.json();
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
 };
 
 //popular TV
@@ -48,11 +47,11 @@ export const getPopularTV = async () => {
 
   const data = await response.json();
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
 };
 
-//top rated
+//top rated movies
 export const getTopRatedMovies = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
@@ -64,8 +63,8 @@ export const getTopRatedMovies = async () => {
   const data = await response.json();
 
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
 };
 
 //top rated shows
@@ -80,8 +79,8 @@ export const getTopRatedTv = async () => {
 
   const data = await response.json();
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
 };
 
 //upcoming movies
@@ -94,11 +93,11 @@ export const getUpcomingMovies = async () => {
   }
   const data = await response.json();
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
 };
 
-//on the air
+//on the air TV shows
 export const getOntheAir = async () => {
   const response = await fetch(
     `${TMDB_DOMAIN}/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1`
@@ -108,8 +107,23 @@ export const getOntheAir = async () => {
   }
   const data = await response.json();
   const { results } = data;
-  const newResultS = slicedArray(results);
-  return newResultS;
+  const newResults = slicedArray(results);
+  return newResults;
+};
+
+//Genre
+export const getGenre = async () => {
+  const response = await fetch(
+    `${TMDB_DOMAIN}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+  );
+
+  if (!response.ok) {
+    throw new Error("No genre");
+  }
+  const data = await response.json();
+  const { genres } = data;
+  console.log(data);
+  return genres;
 };
 
 const TmdbApi = {

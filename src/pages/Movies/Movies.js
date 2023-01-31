@@ -1,12 +1,14 @@
+import Genre from "../../components/Genre/Genre";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
+import { getGenre } from "../../lib/api";
 
 const MoviesPage = () => {
   return (
     <>
       <NavBar />
       <SearchBar />
-      <h1 className="text-white">MoviesPage</h1>
+      <Genre endpoint={getGenre} />
     </>
   );
 };
