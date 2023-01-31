@@ -6,6 +6,7 @@ import movies from "../../assets/icon-nav-movies.svg";
 import tvseries from "../../assets/icon-nav-tv-series.svg";
 import bookmark from "../../assets/icon-nav-bookmark.svg";
 import avatar from "../../assets/image-avatar.png";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -16,18 +17,18 @@ const NavBar = () => {
         </div>
 
         <div className="flex  gap-5">
-          <div>
+          <NavLink to="/">
             <img src={home} alt="home" />
-          </div>
-          <div>
+          </NavLink>
+          <NavLink to="/movies">
             <img src={movies} alt="movies" />
-          </div>
-          <div>
+          </NavLink>
+          <NavLink to="/tv">
             <img src={tvseries} alt="tvseries" />
-          </div>
-          <div>
+          </NavLink>
+          <NavLink to="/bookmark">
             <img src={bookmark} alt="bookmark" />
-          </div>
+          </NavLink>
         </div>
 
         <div>

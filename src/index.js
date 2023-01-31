@@ -4,11 +4,21 @@ import "./index.css";
 // import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import MoviesPage from "./pages/Movies/Movies";
+import TVshow from "./pages/TvSeries/TvSeries";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/movies",
+    element: <MoviesPage />,
+  },
+  {
+    path: "/tv",
+    element: <TVshow />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
