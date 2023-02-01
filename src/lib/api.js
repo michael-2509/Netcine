@@ -126,7 +126,8 @@ export const getGenre = async () => {
   return genres;
 };
 
-const TmdbApi = {
+//discover movies
+export const TmdbApi = {
   getTrending,
   getPopularMovies,
   getPopularTV,

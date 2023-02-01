@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import GenreItem from "./GenreItem";
 
 const GenreList = ({ data }) => {
@@ -7,7 +8,9 @@ const GenreList = ({ data }) => {
       <section className="grid grid-cols-2">
         {" "}
         {data.map((item, i) => (
-          <GenreItem key={i} name={item.name} />
+          <Link to="/movies/genre">
+            <GenreItem key={i} name={item.name} />
+          </Link>
         ))}
       </section>
     </section>
