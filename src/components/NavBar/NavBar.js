@@ -26,7 +26,7 @@ const NavBar = () => {
             <img src={home} alt="home" />
           </NavLink>
           <NavLink
-            to="/movies"
+            to="/movie"
             className={({ isActive }) =>
               isActive ? "activeClass" : "hover:hoverState"
             }

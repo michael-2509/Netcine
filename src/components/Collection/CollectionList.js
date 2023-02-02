@@ -1,11 +1,23 @@
 import Header from "../Header";
 import CollectionItem from "./CollectionItem";
 
-const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
+const CollectionList = ({
+  category,
+  data,
+  isHomePage,
+  isTrending,
+  title,
+  type,
+}) => {
   return (
     <>
       <section className="mb-5 px-4 text-white ">
-        <Header type={type} title={title} isHomePage={isHomePage} />
+        <Header
+          category={category}
+          type={type}
+          title={title}
+          isHomePage={isHomePage}
+        />
 
         <section
           className={

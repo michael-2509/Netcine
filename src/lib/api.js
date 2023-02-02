@@ -20,9 +20,10 @@ export const getTrending = async () => {
 };
 
 //popular movies
-export const getPopularMovies = async () => {
+export const getPopularMovies = async (media_type) => {
+  console.log(media_type);
   const response = await fetch(
-    `${TMDB_DOMAIN}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/${media_type}/popular?api_key=${API_KEY}&language=en-US&page=1`
   );
 
   if (!response.ok) {
@@ -36,25 +37,25 @@ export const getPopularMovies = async () => {
 };
 
 //popular TV
-export const getPopularTV = async () => {
-  const response = await fetch(
-    `${TMDB_DOMAIN}/tv/popular?api_key=${API_KEY}&language=en-US&page=1`
-  );
+// export const getPopularTV = async () => {
+//   const response = await fetch(
+//     `${TMDB_DOMAIN}/tv/popular?api_key=${API_KEY}&language=en-US&page=1`
+//   );
 
-  if (!response.ok) {
-    throw new Error("No popular Movies");
-  }
+//   if (!response.ok) {
+//     throw new Error("No popular Movies");
+//   }
 
-  const data = await response.json();
-  const { results } = data;
-  const newResults = slicedArray(results);
-  return newResults;
-};
+//   const data = await response.json();
+//   const { results } = data;
+//   const newResults = slicedArray(results);
+//   return newResults;
+// };
 
 //top rated movies
-export const getTopRatedMovies = async () => {
+export const getTopRatedMovies = async (media_type) => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/${media_type}/top_rated?api_key=${API_KEY}&language=en-US&page=1`
   );
   if (!response.ok) {
     throw new Error("No top rated movies");
@@ -68,20 +69,20 @@ export const getTopRatedMovies = async () => {
 };
 
 //top rated shows
-export const getTopRatedTv = async () => {
-  const response = await fetch(
-    `${TMDB_DOMAIN}/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
-  );
+// export const getTopRatedTv = async () => {
+//   const response = await fetch(
+//     `${TMDB_DOMAIN}/tv/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+//   );
 
-  if (!response.ok) {
-    throw new Error("No top rated tv shows");
-  }
+//   if (!response.ok) {
+//     throw new Error("No top rated tv shows");
+//   }
 
-  const data = await response.json();
-  const { results } = data;
-  const newResults = slicedArray(results);
-  return newResults;
-};
+//   const data = await response.json();
+//   const { results } = data;
+//   const newResults = slicedArray(results);
+//   return newResults;
+// };
 
 //upcoming movies
 export const getUpcomingMovies = async () => {
@@ -113,6 +114,7 @@ export const getOntheAir = async () => {
 
 //Genre
 export const getGenre = async (media_type) => {
+  console.log(media_type);
   const response = await fetch(
     `${TMDB_DOMAIN}/genre/${media_type}/list?api_key=${API_KEY}&language=en-US`
   );
@@ -136,16 +138,16 @@ export const getDiscovery = async (id, media_type) => {
   }
   const data = await response.json();
   const { results } = data;
-  console.log(id);
+
   return results;
 };
 
 export const TmdbApi = {
   getTrending,
   getPopularMovies,
-  getPopularTV,
+  // getPopularTV,
   getTopRatedMovies,
-  getTopRatedTv,
+  // getTopRatedTv,
 };
 
 export default TmdbApi;

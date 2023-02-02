@@ -8,6 +8,12 @@ import MoviesPage from "./pages/Movies/Movies";
 import TvPage from "./pages/TvShow/TvShow";
 import MovieGenre from "./pages/Movies/MovieGenre";
 import TvGenre from "./pages/TvShow/TvGenre";
+import PopularMovies from "./pages/Movies/PopularMovies";
+import TopRatedMovies from "./pages/Movies/TopRatedMovies";
+import UpcomingMovies from "./pages/Movies/UpcomingMovies";
+import PopularTv from "./pages/TvShow/PopularTv";
+import TopRatedTv from "./pages/TvShow/TopRatedTv";
+import AiringTv from "./pages/TvShow/AiringTv";
 
 const router = createBrowserRouter([
   {
@@ -15,9 +21,21 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/movies",
+    path: "/movie",
     element: <MoviesPage />,
     // children: [{ path: "/movies/genre", element: <MovieGenre /> }],
+  },
+  {
+    path: "/movie/popular",
+    element: <PopularMovies />,
+  },
+  {
+    path: "/movie/toprated",
+    element: <TopRatedMovies />,
+  },
+  {
+    path: "/movie/upcoming",
+    element: <UpcomingMovies />,
   },
   {
     path: "/movie/genre/:id",
@@ -26,6 +44,18 @@ const router = createBrowserRouter([
   {
     path: "/tv",
     element: <TvPage />,
+  },
+  {
+    path: "/tv/popular",
+    element: <PopularTv />,
+  },
+  {
+    path: "/tv/toprated",
+    element: <TopRatedTv />,
+  },
+  {
+    path: "/tv/airing",
+    element: <AiringTv />,
   },
   {
     path: "/tv/genre/:id",

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import MediaTypeIcon from "../UI/MediaTypeIcon";
 
-const Header = ({ title, type, isHomePage }) => {
+const Header = ({ category, title, type, isHomePage }) => {
   return (
     <section className=" text-white ">
       <div className="mb-5 flex justify-between ">
@@ -12,7 +12,7 @@ const Header = ({ title, type, isHomePage }) => {
           <MediaTypeIcon type={type} />
         </div>
         <Link
-          to="/"
+          to={`/${type}/${category}`}
           className={`${
             isHomePage ? "rounded-xl border-2 border-solid px-2" : "invisible"
           }`}

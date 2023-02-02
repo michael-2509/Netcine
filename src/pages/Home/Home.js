@@ -4,9 +4,9 @@ import Collection from "../../components/Collection/Collection";
 import {
   getTrending,
   getPopularMovies,
-  getPopularTV,
+  // getPopularTV,
   getTopRatedMovies,
-  getTopRatedTv,
+  // getTopRatedTv,
   getUpcomingMovies,
   getOntheAir,
 } from "../../lib/api";
@@ -34,21 +34,21 @@ const Home = () => {
       <Collection
         isHomePage
         category="popular"
-        endPoint={getPopularTV}
+        endPoint={getPopularMovies}
         title="Popular"
         type="tv"
       />
       <Collection
         isHomePage
-        category="top rated"
+        category="toprated"
         endPoint={getTopRatedMovies}
         title="Top Rated"
         type="movie"
       />
       <Collection
         isHomePage
-        category="top rated"
-        endPoint={getTopRatedTv}
+        category="toprated"
+        endPoint={getTopRatedMovies}
         title="Top Rated"
         type="tv"
       />
@@ -61,7 +61,7 @@ const Home = () => {
       />
       <Collection
         isHomePage
-        category="On the Air"
+        category="airing"
         endPoint={getOntheAir}
         title="On the Air"
         type="tv"
