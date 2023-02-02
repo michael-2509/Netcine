@@ -23,17 +23,23 @@ const NavBar = () => {
           >
             <img src={home} alt="home" className="" />
           </NavLink>
-          <NavLink to="/movies">
-            {" "}
+          <NavLink
+            to="/movies"
             className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+          >
+            {" "}
             <img fill="red" src={movies} alt="movies" />
           </NavLink>
-          <NavLink to="/tv"
-           className={({ isActive }) => (isActive ? "activeClass" : undefined)}>
+          <NavLink
+            to="/tv"
+            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+          >
             <img src={tvseries} alt="tvseries" />
           </NavLink>
-          <NavLink to="/bookmark"
-           className={({ isActive }) => (isActive ? "activeClass" : undefined)}>
+          <NavLink
+            to="/bookmark"
+            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+          >
             <img src={bookmark} alt="bookmark" />
           </NavLink>
         </div>
