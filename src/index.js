@@ -5,8 +5,9 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import MoviesPage from "./pages/Movies/Movies";
-import TVshow from "./pages/TvSeries/TvSeries";
+import TvPage from "./pages/TvShow/TvShow";
 import MovieGenre from "./pages/Movies/MovieGenre";
+import TvGenre from "./pages/TvShow/TvGenre";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,16 @@ const router = createBrowserRouter([
     // children: [{ path: "/movies/genre", element: <MovieGenre /> }],
   },
   {
-    path: "/movies/genre/:id",
+    path: "/movie/genre/:id",
     element: <MovieGenre />,
   },
   {
     path: "/tv",
-    element: <TVshow />,
+    element: <TvPage />,
+  },
+  {
+    path: "/tv/genre/:id",
+    element: <TvGenre />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

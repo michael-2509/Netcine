@@ -126,9 +126,9 @@ export const getGenre = async (media_type) => {
 };
 
 //discover movies
-export const getDiscovery = async (id) => {
+export const getDiscovery = async (id, media_type) => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=${id}`
+    `${TMDB_DOMAIN}/discover/${media_type}?api_key=${API_KEY}&language=en-US&page=1&with_genres=${id}`
   );
 
   if (!response.ok) {

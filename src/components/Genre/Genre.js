@@ -23,7 +23,7 @@ const Genre = ({ endpoint, media_type }) => {
     return <p className="text-white">No loaded movies</p>;
   }
 
-  return <GenreList data={data} />;
+  return <GenreList data={data} media_type={media_type} />;
 };
 
 export default Genre;
