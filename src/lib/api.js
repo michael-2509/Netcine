@@ -127,6 +127,20 @@ export const getGenre = async () => {
 };
 
 //discover movies
+export const getDiscovery = async () => {
+  const response = await fetch(
+    `${TMDB_DOMAIN}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=crime`
+  );
+
+  if (!response.ok) {
+    throw new Error("No genre");
+  }
+  const data = await response.json();
+  const { results } = data;
+  console.log(data);
+  return results;
+};
+
 export const TmdbApi = {
   getTrending,
   getPopularMovies,
