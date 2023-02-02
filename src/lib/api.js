@@ -21,7 +21,6 @@ export const getTrending = async () => {
 
 //popular movies
 export const getPopularMovies = async (media_type) => {
-  console.log(media_type);
   const response = await fetch(
     `${TMDB_DOMAIN}/${media_type}/popular?api_key=${API_KEY}&language=en-US&page=1`
   );
@@ -128,7 +127,7 @@ export const getGenre = async (media_type) => {
 };
 
 //discover movies
-export const getDiscovery = async (id, media_type) => {
+export const getDiscovery = async (media_type, id) => {
   const response = await fetch(
     `${TMDB_DOMAIN}/discover/${media_type}?api_key=${API_KEY}&language=en-US&page=1&with_genres=${id}`
   );
