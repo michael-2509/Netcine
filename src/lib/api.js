@@ -113,7 +113,6 @@ export const getOntheAir = async () => {
 
 //Genre
 export const getGenre = async (media_type) => {
-  console.log(media_type);
   const response = await fetch(
     `${TMDB_DOMAIN}/genre/${media_type}/list?api_key=${API_KEY}&language=en-US`
   );

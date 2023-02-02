@@ -12,9 +12,9 @@ const NavBar = () => {
   return (
     <>
       <section className="flex justify-between bg-semi-dark-blue py-5 px-4">
-        <div>
+        <NavLink to="/">
           <img src={logo} alt="logo" />
-        </div>
+        </NavLink>
 
         <div className="flex  gap-5">
           <NavLink
