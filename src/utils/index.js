@@ -3,6 +3,6 @@ some little code snippets like a function
 that can achieve something in app*/
 
 //sliced Array
-export const slicedArray = (arr) => {
-  return arr.slice(0, 4);
+export const slicedArray = (arr, value) => {
+  return arr.slice(0, value);
 };

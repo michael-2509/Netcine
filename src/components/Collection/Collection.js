@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import useHttp from "../../hooks/use-http";
+import { slicedArray } from "../../utils";
 import CardSkeleton from "../CardSkeleton";
 
 import CollectionList from "./CollectionList";
@@ -14,6 +15,8 @@ const Trending = ({
   category,
 }) => {
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
+
+  let newData = [];
 
   useEffect(() => {
     sendRequest(type, id);
@@ -31,10 +34,16 @@ const Trending = ({
     return <p className="text-white">No loaded movies</p>;
   }
 
+  if (isHomePage) {
+    newData = slicedArray(data, 4);
+  } else {
+    newData = data;
+  }
+
   return (
     <CollectionList
       category={category}
-      data={data}
+      data={newData}
       isHomePage={isHomePage}
       isTrending={isTrending}
       title={title}
