@@ -112,9 +112,9 @@ export const getOntheAir = async () => {
 };
 
 //Genre
-export const getGenre = async () => {
+export const getGenre = async (media_type) => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+    `${TMDB_DOMAIN}/genre/${media_type}/list?api_key=${API_KEY}&language=en-US`
   );
 
   if (!response.ok) {

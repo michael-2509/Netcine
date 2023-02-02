@@ -8,7 +8,7 @@ const MoviesPage = () => {
     <>
       <NavBar />
       <SearchBar />
-      <Genre endpoint={getGenre} />
+      <Genre endpoint={getGenre} media_type="movie" />
     </>
   );
 };
