@@ -4,12 +4,12 @@ import CardSkeleton from "../CardSkeleton";
 
 import CollectionList from "./CollectionList";
 
-const Trending = ({ endPoint, title, isTrending, type }) => {
+const Trending = ({ endPoint, isHomePage, isTrending, title, type, id }) => {
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
 
   useEffect(() => {
-    sendRequest();
-  }, [sendRequest]);
+    sendRequest(id);
+  }, [sendRequest, id]);
 
   if (status === "pending") {
     return <CardSkeleton isTrending={isTrending} />;
@@ -26,8 +26,9 @@ const Trending = ({ endPoint, title, isTrending, type }) => {
   return (
     <CollectionList
       data={data}
-      title={title}
+      isHomePage={isHomePage}
       isTrending={isTrending}
+      title={title}
       type={type}
     />
   );

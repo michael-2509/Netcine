@@ -8,7 +8,7 @@ const GenreList = ({ data }) => {
       <section className="grid grid-cols-2">
         {" "}
         {data.map((item, index) => (
-          <Link to={`/movies/genre`}>
+          <Link to={`/movies/genre/${item.id}?name=${item.name}`}>
             <GenreItem key={index} name={item.name} />
           </Link>
         ))}

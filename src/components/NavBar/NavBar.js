@@ -19,26 +19,34 @@ const NavBar = () => {
         <div className="flex  gap-5">
           <NavLink
             to="/"
-            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+            className={({ isActive }) =>
+              isActive ? "activeClass " : "hover:hoverState"
+            }
           >
-            <img src={home} alt="home" className="" />
+            <img src={home} alt="home" />
           </NavLink>
           <NavLink
             to="/movies"
-            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+            className={({ isActive }) =>
+              isActive ? "activeClass" : "hover:hoverState"
+            }
           >
             {" "}
             <img fill="red" src={movies} alt="movies" />
           </NavLink>
           <NavLink
             to="/tv"
-            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+            className={({ isActive }) =>
+              isActive ? "activeClass" : "hover:hoverState"
+            }
           >
             <img src={tvseries} alt="tvseries" />
           </NavLink>
           <NavLink
             to="/bookmark"
-            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+            className={({ isActive }) =>
+              isActive ? "activeClass" : "hover:hoverState"
+            }
           >
             <img src={bookmark} alt="bookmark" />
           </NavLink>
@@ -54,6 +62,6 @@ const NavBar = () => {
 
 export default NavBar;
 
-const isActive = (isActiveClass) => {
-  return (isActiveClass) => (isActive ? "activeClassName" : undefined);
-};
+// const isActive = (isActive) => {
+//   return (isActive) => (isActive ? "activeClassName" : undefined);
+// };

@@ -122,14 +122,13 @@ export const getGenre = async () => {
   }
   const data = await response.json();
   const { genres } = data;
-  console.log(data);
   return genres;
 };
 
 //discover movies
-export const getDiscovery = async () => {
+export const getDiscovery = async (id) => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=crime`
+    `${TMDB_DOMAIN}/discover/movie?api_key=${API_KEY}&language=en-US&page=1&with_genres=${id}`
   );
 
   if (!response.ok) {
@@ -137,7 +136,7 @@ export const getDiscovery = async () => {
   }
   const data = await response.json();
   const { results } = data;
-  console.log(data);
+  console.log(id);
   return results;
 };
 

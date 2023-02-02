@@ -31,6 +31,14 @@
     .heading-xs {
       @apply text-heading-xs font-medium;
     }
+
+    .activeClass {
+      @apply brightness-0 invert
+    }
+
+    .hoverState {
+      filter: invert(51%) sepia(58%) saturate(2608%) hue-rotate(328deg) brightness(93%) contrast(112%);
+    }
   
 
     

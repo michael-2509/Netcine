@@ -5,7 +5,7 @@ const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
   return (
     <>
       <section className="mb-5 px-4 text-white ">
-        <Header type={type} title={title} />
+        <Header type={type} title={title} isHomePage={isHomePage} />
 
         <section
           className={
@@ -14,7 +14,7 @@ const CollectionList = ({ data, isHomePage, isTrending, title, type }) => {
               : "grid grid-cols-2 gap-x-4"
           }
         >
-          {data.map((item) => (
+          {data.map((item, i) => (
             <>
               <CollectionItem
                 key={item.id}

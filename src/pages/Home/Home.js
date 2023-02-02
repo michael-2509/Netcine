@@ -19,6 +19,7 @@ const Home = () => {
       <SearchBar />
       <Collection
         isTrending
+        isHomePage
         endPoint={getTrending}
         title="Trending"
         type="both"

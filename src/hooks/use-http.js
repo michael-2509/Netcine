@@ -35,18 +35,22 @@ const useHttp = (requestFunction, startWithPending = false) => {
     data: null,
   });
 
-  const sendRequest = useCallback(async () => {
-    dispatchFn({ type: "SEND" });
-    try {
-      const responseData = await requestFunction();
-      dispatchFn({ type: "SUCCESS", responseData });
-    } catch (error) {
-      dispatchFn({
-        type: "ERROR",
-        errorMessage: error.Message || "something went wrong!",
-      });
-    }
-  }, [requestFunction]);
+  const sendRequest = useCallback(
+    async (requestData) => {
+      dispatchFn({ type: "SEND" });
+      try {
+        console.log(requestData);
+        const responseData = await requestFunction(requestData);
+        dispatchFn({ type: "SUCCESS", responseData });
+      } catch (error) {
+        dispatchFn({
+          type: "ERROR",
+          errorMessage: error.Message || "something went wrong!",
+        });
+      }
+    },
+    [requestFunction]
+  );
 
   return {
     sendRequest,
