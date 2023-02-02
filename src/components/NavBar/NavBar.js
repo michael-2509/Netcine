@@ -17,16 +17,23 @@ const NavBar = () => {
         </div>
 
         <div className="flex  gap-5">
-          <NavLink to="/">
-            <img src={home} alt="home" />
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+          >
+            <img src={home} alt="home" className="" />
           </NavLink>
           <NavLink to="/movies">
-            <img src={movies} alt="movies" />
+            {" "}
+            className={({ isActive }) => (isActive ? "activeClass" : undefined)}
+            <img fill="red" src={movies} alt="movies" />
           </NavLink>
-          <NavLink to="/tv">
+          <NavLink to="/tv"
+           className={({ isActive }) => (isActive ? "activeClass" : undefined)}>
             <img src={tvseries} alt="tvseries" />
           </NavLink>
-          <NavLink to="/bookmark">
+          <NavLink to="/bookmark"
+           className={({ isActive }) => (isActive ? "activeClass" : undefined)}>
             <img src={bookmark} alt="bookmark" />
           </NavLink>
         </div>
@@ -40,3 +47,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+const isActive = (isActiveClass) => {
+  return (isActiveClass) => (isActive ? "activeClassName" : undefined);
+};
