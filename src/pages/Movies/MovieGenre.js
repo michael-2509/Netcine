@@ -1,4 +1,4 @@
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Collection from "../../components/Collection/Collection";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
