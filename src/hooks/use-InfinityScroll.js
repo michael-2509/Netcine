@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import useHttp from "../hooks/use-http";
 
-const useInfinityScroll = (endPoint, type, id) => {
+const useInfinityScroll = (endPoint, type) => {
   const [page, setPage] = useState(1);
   const [updateData, setUpdateData] = useState([]);
   const [fetch, setFetch] = useState(false);
