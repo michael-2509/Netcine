@@ -29,7 +29,7 @@ const CollectionList = ({
           {data.map((item, i) => (
             <>
               <CollectionItem
-                key={item.id}
+                key={item.i}
                 isTrending={isTrending}
                 image={item.backdrop_path || item.poster_path}
                 media_type={item.media_type}

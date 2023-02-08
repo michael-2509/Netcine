@@ -1,4 +1,4 @@
-import Collection from "../../components/Collection/Collection";
+import VideoCollection from "../../components/VideoCollection";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
 import { getPopularMovies } from "../../lib/api";
@@ -8,7 +8,7 @@ const PopularMovies = () => {
     <>
       <NavBar />
       <SearchBar />
-      <Collection
+      <VideoCollection
         endPoint={getPopularMovies}
         title="Popular Movies"
         type="movie"

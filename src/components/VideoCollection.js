@@ -1,29 +1,29 @@
-import React, { useEffect } from "react";
-import useHttp from "../../hooks/use-http";
-import { slicedArray } from "../../utils";
-import CardSkeleton from "../CardSkeleton";
+import useInfinityScroll from "../hooks/use-InfinityScroll";
+import { slicedArray } from "../utils";
+import CardSkeleton from "./CardSkeleton";
 
-import CollectionList from "./CollectionList";
+import CollectionList from "./Collection/CollectionList";
 
 const Trending = ({
   endPoint,
+  type,
   id,
   isHomePage,
   isTrending,
   title,
-  type,
+
   category,
 }) => {
-  const { sendRequest, data, error, status } = useHttp(endPoint, true);
+  const {
+    updateData: data,
+    status,
+    error,
+    page,
+  } = useInfinityScroll(endPoint, type);
 
   let newData = [];
-  let page = 1;
 
-  useEffect(() => {
-    sendRequest(type, id, page);
-  }, [sendRequest, id, type, page]);
-
-  if (status === "pending") {
+  if (page === 1 && data === null) {
     return <CardSkeleton isTrending={isTrending} />;
   }
 
