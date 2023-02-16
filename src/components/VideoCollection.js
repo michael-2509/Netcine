@@ -25,9 +25,7 @@ const Trending = ({
   //   console.log("break 1");
   //   return <CardSkeleton isTrending={isTrending} />;
   // }
-  if (status === "pending") {
-    return <CardSkeleton isTrending={isTrending} />;
-  }
+
   if (error) {
     return <p className="text-center text-white">{error}</p>;
   }
