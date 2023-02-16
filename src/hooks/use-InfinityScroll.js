@@ -7,29 +7,29 @@ const useInfinityScroll = (endPoint, type) => {
   const [fetch, setFetch] = useState(false);
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
 
+  //fetch new data whenever page is updated
   useEffect(() => {
     sendRequest(type, page);
     setFetch(false);
-    if (fetch) {
-      setPage(page + 1);
-    }
-  }, [sendRequest, type, page, fetch]);
+  }, [sendRequest, type, page]);
 
+  //updata the previous data with the newly fetched data
   useEffect(() => {
     setUpdateData((prev) => {
       if (page === 1) {
-        console.log("page 1: ");
         return data;
-      } else if (page > 1 && status === "pending") {
-        console.log("page 2 but no data yet: ");
-        return [...prev];
       } else {
-        console.log("page 3 with total data: ");
-
         return [...prev, ...data];
       }
     });
-  }, [data, page, fetch, status]);
+  }, [page, data, status]);
+
+  //updates page when user scrolls to the bottom
+  useEffect(() => {
+    if (fetch) {
+      setPage(page + 1);
+    }
+  }, [page, fetch]);
 
   // function for determine when to fetch
   const onScroll = useCallback(() => {
@@ -47,6 +47,13 @@ const useInfinityScroll = (endPoint, type) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 
+  useEffect(() => {
+    setPage(1);
+  }, []);
+
+  console.log(status);
+  console.log(data);
+  console.log(updateData);
   return { updateData, error, status, page };
 };
 

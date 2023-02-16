@@ -1,16 +1,14 @@
-import Collection from "../../components/Collection/Collection";
+import VideoCollection from "../../components/VideoCollection";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
 import { getTopRatedMovies } from "../../lib/api";
 
 const TopRatedMovies = () => {
-  console.log("top rated");
-
   return (
     <>
       <NavBar />
       <SearchBar />
-      <Collection
+      <VideoCollection
         endPoint={getTopRatedMovies}
         title="Top Rated Movies"
         type="movie"

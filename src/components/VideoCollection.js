@@ -6,12 +6,10 @@ import CollectionList from "./Collection/CollectionList";
 
 const Trending = ({
   endPoint,
+  title,
   type,
-  id,
   isHomePage,
   isTrending,
-  title,
-
   category,
 }) => {
   const {
@@ -23,10 +21,13 @@ const Trending = ({
 
   let newData = [];
 
-  if (page === 1 && data === null) {
+  // if (page === 1 && data === null) {
+  //   console.log("break 1");
+  //   return <CardSkeleton isTrending={isTrending} />;
+  // }
+  if (status === "pending") {
     return <CardSkeleton isTrending={isTrending} />;
   }
-
   if (error) {
     return <p className="text-center text-white">{error}</p>;
   }

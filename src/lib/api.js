@@ -62,8 +62,7 @@ export const getTopRatedMovies = async (media_type, page) => {
   const data = await response.json();
 
   const { results } = data;
-  const newResults = slicedArray(results);
-  return newResults;
+  return results;
 };
 
 //top rated shows
@@ -83,9 +82,9 @@ export const getTopRatedMovies = async (media_type, page) => {
 // };
 
 //upcoming movies
-export const getUpcomingMovies = async () => {
+export const getUpcomingMovies = async (page) => {
   const response = await fetch(
-    `${TMDB_DOMAIN}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+    `${TMDB_DOMAIN}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
   );
   if (!response.ok) {
     throw new Error("No upcoming yet");
