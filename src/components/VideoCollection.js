@@ -1,6 +1,6 @@
 import useInfinityScroll from "../hooks/use-InfinityScroll";
 import { slicedArray } from "../utils";
-import CardSkeleton from "./CardSkeleton";
+// import CardSkeleton from "./CardSkeleton";
 
 import CollectionList from "./Collection/CollectionList";
 
@@ -12,12 +12,7 @@ const Trending = ({
   isTrending,
   category,
 }) => {
-  const {
-    updateData: data,
-    status,
-    error,
-    page,
-  } = useInfinityScroll(endPoint, type);
+  const { uniqueData: data, status, error } = useInfinityScroll(endPoint, type);
 
   let newData = [];
 

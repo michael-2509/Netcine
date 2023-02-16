@@ -3,24 +3,29 @@ import useHttp from "../hooks/use-http";
 
 const useInfinityScroll = (endPoint, type) => {
   const [page, setPage] = useState(1);
-  const [count, setCount] = useState(0);
   const [updateData, setUpdateData] = useState([]);
   const [fetch, setFetch] = useState(false);
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
 
+  useEffect(() => {
+    setPage(1);
+  }, []);
+
   //fetch new data whenever page is updated
   useEffect(() => {
-    console.log("send " + count + 1);
     sendRequest(type, page);
+  }, [sendRequest, type, page]);
+
+  //update page when fetch is set to changes
+  useEffect(() => {
     if (fetch) {
+      setFetch(false);
       setPage(page + 1);
     }
-    setFetch(false);
-  }, [sendRequest, type, page, fetch]);
+  }, [fetch, page]);
 
   //updata the previous data with the newly fetched data
   useEffect(() => {
-    console.log("update " + count + 1);
     if (status === "pending") return;
     setUpdateData((prev) => {
       if (page === 1) {
@@ -31,16 +36,8 @@ const useInfinityScroll = (endPoint, type) => {
     });
   }, [page, data, status]);
 
-  //updates page when user scrolls to the bottom
-  // useEffect(() => {
-  //   if (fetch) {
-  //     setPage(page + 1);
-  //   }
-  // }, [page, fetch]);
-
   // function for determine when to fetch
   const onScroll = useCallback(() => {
-    console.log("onscroll " + count + 1);
     if (
       window.innerHeight + window.scrollY >=
       document.body.scrollHeight - 50
@@ -51,22 +48,18 @@ const useInfinityScroll = (endPoint, type) => {
 
   //listen to listen to the onScroll function
   useEffect(() => {
-    console.log("listen" + count + 1);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 
-  useEffect(() => {
-    console.log("initial " + count + 1);
-    setPage(1);
-  }, []);
-
   console.log(page);
-  console.log("main " + count + 1);
-  // console.log(status);
-  // console.log(data);
-  // console.log(updateData);
-  return { updateData, error, status, page };
+
+  //remove duplicates from array
+  const uniqueData = [
+    ...new Map(updateData.map((item) => [item.id, item])).values(),
+  ];
+
+  return { uniqueData, error, status, page };
 };
 
 export default useInfinityScroll;
