@@ -1,6 +1,6 @@
 import useInfinityScroll from "../hooks/use-InfinityScroll";
 import { slicedArray } from "../utils";
-// import CardSkeleton from "./CardSkeleton";
+import CardSkeleton from "./CardSkeleton";
 
 import CollectionList from "./Collection/CollectionList";
 
@@ -11,15 +11,15 @@ const Trending = ({
   isHomePage,
   isTrending,
   category,
+  page,
 }) => {
   const { uniqueData: data, status, error } = useInfinityScroll(endPoint, type);
 
   let newData = [];
 
-  // if (page === 1 && data === null) {
-  //   console.log("break 1");
-  //   return <CardSkeleton isTrending={isTrending} />;
-  // }
+  if (page === 1 && status === "pending") {
+    return <CardSkeleton isTrending={isTrending} />;
+  }
 
   if (error) {
     return <p className="text-center text-white">{error}</p>;
