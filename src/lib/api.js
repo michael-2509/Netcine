@@ -140,16 +140,15 @@ export const getDiscovery = async (media_type, id) => {
 
 //Get Details
 export const getDetails = async (media_type, id) => {
-  const response = fetch(
+  const response = await fetch(
     `${TMDB_DOMAIN}/${media_type}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=credits`
   );
   if (!response.ok) {
     throw new Error("No Info available");
   }
   const data = await response.json();
-  const { results } = data;
-  console.log(results);
-  return results;
+
+  return data;
 };
 
 export const TmdbApi = {

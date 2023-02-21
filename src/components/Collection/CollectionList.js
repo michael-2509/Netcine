@@ -26,10 +26,11 @@ const CollectionList = ({
               : "grid grid-cols-2 gap-x-4"
           }
         >
-          {data.map((item, i) => (
+          {data.map((item) => (
             <>
               <CollectionItem
-                key={item.i}
+                key={item.id}
+                id={item.id}
                 isTrending={isTrending}
                 image={item.backdrop_path || item.poster_path}
                 media_type={item.media_type}

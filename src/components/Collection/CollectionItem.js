@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import movie from "../../assets/icon-category-movie.svg";
 import tv from "../../assets/icon-category-tv.svg";
 
 const CollectionItem = ({
+  id,
   image,
   media_type,
   title,
@@ -13,15 +15,17 @@ const CollectionItem = ({
     <>
       <article className="mb-5">
         <div>
-          <img
-            className={
-              isTrending
-                ? " h-[140px] w-60 max-w-none rounded-lg object-cover opacity-50 "
-                : "h-[110px]  max-w-full rounded-lg object-cover"
-            }
-            src={`${"https://image.tmdb.org/t/p/w500/"}${image}`}
-            alt="images"
-          />
+          <Link to={`/movie/${id}`}>
+            <img
+              className={
+                isTrending
+                  ? " h-[140px] w-60 max-w-none rounded-lg object-cover opacity-50 "
+                  : "h-[110px]  max-w-full rounded-lg object-cover"
+              }
+              src={`${"https://image.tmdb.org/t/p/w500/"}${image}`}
+              alt="images"
+            />
+          </Link>
           <div className={isTrending ? "relative bottom-16 left-2" : ""}>
             <div>
               <div className="flex items-center ">
