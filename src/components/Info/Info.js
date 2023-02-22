@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
-import SearchBar from "../SearchBar.js/SearchBar";
+// import SearchBar from "../SearchBar.js/SearchBar";
 import useHttp from "../../hooks/use-http";
 import { getDetails } from "../../lib/api";
 
