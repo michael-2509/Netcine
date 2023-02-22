@@ -6,3 +6,11 @@ that can achieve something in app*/
 export const slicedArray = (arr, value) => {
   return arr.slice(0, value);
 };
+
+//convert minute to seconds
+
+export const timeConversion = (runtime) => {
+  const hours = Math.floor(runtime / 60);
+  const minutes = runtime % 60;
+  return `${hours}h ${minutes}m`;
+};

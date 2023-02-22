@@ -39,6 +39,17 @@
     .hoverState {
       filter: invert(51%) sepia(58%) saturate(2608%) hue-rotate(328deg) brightness(93%) contrast(112%);
     }
+
+    .horizontalStar{
+      @apply inline-block
+    }
+
+    .empty-icons {
+      display: flex !important;
+    }
+    .filled-icons {
+      display: -webkit-inline-box !important;
+    }
   
 
     

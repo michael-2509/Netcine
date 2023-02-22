@@ -34,7 +34,7 @@ const Info = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <InfoList data={data} />
     </>
   );
