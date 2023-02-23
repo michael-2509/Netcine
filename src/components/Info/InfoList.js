@@ -22,6 +22,7 @@ const InfoList = ({ data }) => {
   const { cast, crew } = credits;
   const newCast = slicedArray(cast, 10);
   const director = crew.find((item) => item.job === "Director");
+  const writer = crew.find((item) => item.job === "Writer");
   const newRating = (vote_average / 2).toFixed(1);
   const { results } = recommendations;
   console.log(newRating);
@@ -68,7 +69,7 @@ const InfoList = ({ data }) => {
               SVGstyle={{ display: "inline-block" }}
               size={50}
               iconsCount={5}
-              initialValue={2}
+              initialValue={newRating}
               allowFraction
               emptyIcon={<FaRegStar />}
               fillIcon={<FaStar />}
@@ -104,6 +105,15 @@ const InfoList = ({ data }) => {
               {director.name}
             </p>
           </div>
+          {writer && (
+            <div className="pt-4">
+              && <h1 className="text-white">Writer</h1>
+              <p className="text-body-md font-thin text-white opacity-50">
+                {" "}
+                {writer.name}
+              </p>
+            </div>
+          )}
         </section>
         <section className="mb-4 bg-dark-blue px-4 py-4">
           <p className="mb-4 border-l-4 border-red pl-4 text-heading-lg text-white">
@@ -111,13 +121,16 @@ const InfoList = ({ data }) => {
           </p>
           <div className="flex gap-4 overflow-x-scroll">
             {" "}
-            {results.map(({ title, backdrop_path: image }) => {
+            {results.map(({ title, backdrop_path: image, poster_path }) => {
               return (
                 <article className=" bg-semi-dark-blue">
                   {" "}
                   <img
                     className="h-60 w-40 max-w-none object-cover"
-                    src={`https://image.tmdb.org/t/p/w500/${image}`}
+                    src={
+                      `https://image.tmdb.org/t/p/w500/${image}` ||
+                      `https://image.tmdb.org/t/p/w500/${poster_path}}`
+                    }
                     alt={title}
                   />
                   <p className="px-4 pt-2 text-body-md text-white">{title}</p>
