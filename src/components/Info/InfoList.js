@@ -76,7 +76,7 @@ const InfoList = ({ data }) => {
         </section>
         <section className="border-b-2 border-white bg-dark-blue py-4 px-4">
           <p className="mb-4 border-l-4  border-red pl-4 text-white">CAST</p>
-          <div className="h-scroll flex gap-4 overflow-x-scroll">
+          <div className="hide-scrollbar flex gap-4 overflow-x-scroll">
             {" "}
             {newCast.map(({ name, profile_path: image }) => {
               return (
