@@ -4,12 +4,11 @@ import Collection from "../../components/Collection/Collection";
 import {
   getTrending,
   getPopularMovies,
-  // getPopularTV,
   getTopRatedMovies,
-  // getTopRatedTv,
   getUpcomingMovies,
   getOntheAir,
 } from "../../lib/api";
+
 import { SkeletonTheme } from "react-loading-skeleton";
 
 const Home = () => {

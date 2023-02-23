@@ -15,6 +15,7 @@ import PopularTv from "./pages/TvShow/PopularTv";
 import TopRatedTv from "./pages/TvShow/TopRatedTv";
 import AiringTv from "./pages/TvShow/AiringTv";
 import Info from "./components/Info/Info";
+import SearchPage from "./pages/SearchPage";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/tv/genre/:id",
     element: <TvGenre />,
+  },
+  {
+    path: "/search/all/:title",
+    element: <SearchPage />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -30,9 +30,11 @@ const CollectionItem = ({
             <div>
               <div className="flex items-center ">
                 {" "}
-                <p className="text-xs pr-4 font-light opacity-75">
-                  {year.slice(0, 4)}
-                </p>
+                {year && (
+                  <p className="text-xs pr-4 font-light opacity-75">
+                    {year.slice(0, 4)}
+                  </p>
+                )}
                 <div className=" flex items-center gap-2  before:content-['•']">
                   {(media_type || type) === "movie" ? (
                     <div className="flex items-center gap-2">

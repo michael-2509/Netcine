@@ -52,6 +52,7 @@ export const getPopularMovies = async (media_type, page) => {
 
 //top rated movies
 export const getTopRatedMovies = async (media_type, page) => {
+  console.log(page);
   const response = await fetch(
     `${TMDB_DOMAIN}/${media_type}/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`
   );
@@ -82,7 +83,7 @@ export const getTopRatedMovies = async (media_type, page) => {
 // };
 
 //upcoming movies
-export const getUpcomingMovies = async (page) => {
+export const getUpcomingMovies = async (media_type, page) => {
   const response = await fetch(
     `${TMDB_DOMAIN}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`
   );
@@ -96,7 +97,7 @@ export const getUpcomingMovies = async (page) => {
 };
 
 //on the air TV shows
-export const getOntheAir = async (page) => {
+export const getOntheAir = async (media_type, page) => {
   const response = await fetch(
     `${TMDB_DOMAIN}/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=${page}`
   );
@@ -149,6 +150,22 @@ export const getDetails = async (media_type, id) => {
   const data = await response.json();
 
   return data;
+};
+
+//search
+export const getSearch = async (type, id, query) => {
+  console.log(query);
+  const response = await fetch(
+    `${TMDB_DOMAIN}/search/multi?api_key=${API_KEY}&language=en-US&query=${query}&page=1`
+  );
+
+  if (!response.ok) {
+    throw new Error("No search found");
+  }
+  const data = await response.json();
+  const { results } = data;
+  console.log(results);
+  return results;
 };
 
 export const TmdbApi = {
