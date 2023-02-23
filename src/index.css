@@ -63,7 +63,7 @@
     background: #5a698f; /* app-greyish-blue */
     border-radius: 10px;
   }
-  hide-scrollbar {
+  .hide-scrollbar::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
