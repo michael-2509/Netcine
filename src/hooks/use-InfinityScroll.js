@@ -57,6 +57,8 @@ const useInfinityScroll = (endPoint, type) => {
     ...new Map(updateData.map((item) => [item.id, item])).values(),
   ];
 
+  console.log(page);
+
   return { uniqueData, error, status, page };
 };
 

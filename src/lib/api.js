@@ -52,7 +52,6 @@ export const getPopularMovies = async (media_type, page) => {
 
 //top rated movies
 export const getTopRatedMovies = async (media_type, page) => {
-  console.log(page);
   const response = await fetch(
     `${TMDB_DOMAIN}/${media_type}/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`
   );
