@@ -52,8 +52,6 @@ const useInfinityScroll = (endPoint, type) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 
-  console.log(page);
-
   //remove duplicates from array
   const uniqueData = [
     ...new Map(updateData.map((item) => [item.id, item])).values(),

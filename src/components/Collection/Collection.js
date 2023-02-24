@@ -16,14 +16,12 @@ const Trending = ({
   category,
 }) => {
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
-  console.log(search);
 
   let newData = [];
   let page = 1;
 
   useEffect(() => {
     sendRequest(type, id, search);
-    console.log(search);
   }, [sendRequest, id, type, page, search]);
 
   if (status === "pending") {
