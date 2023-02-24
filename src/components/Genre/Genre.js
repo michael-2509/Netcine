@@ -3,6 +3,7 @@
 import useHttp from "../../hooks/use-http";
 import { useEffect } from "react";
 import GenreList from "./GenreList";
+import MovieSkeleton from "../MovieSkeleton";
 
 const Genre = ({ endpoint, media_type }) => {
   const { sendRequest, data, error, status } = useHttp(endpoint, true);
@@ -12,7 +13,7 @@ const Genre = ({ endpoint, media_type }) => {
   }, [sendRequest, media_type]);
 
   if (status === "pending") {
-    return <p className="text-white">Loading...</p>;
+    return <MovieSkeleton />;
   }
 
   if (error) {

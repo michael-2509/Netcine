@@ -14,7 +14,7 @@ import UpcomingMovies from "./pages/Movies/UpcomingMovies";
 import PopularTv from "./pages/TvShow/PopularTv";
 import TopRatedTv from "./pages/TvShow/TopRatedTv";
 import AiringTv from "./pages/TvShow/AiringTv";
-import Info from "./components/Info/Info";
+import Details from "./pages/Details";
 import SearchPage from "./pages/SearchPage";
 import Trending from "./pages/Movies/Trending";
 import Bookmark from "./pages/BookmarkPage";
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     path: "/movie/genre/:id",
     element: <MovieGenre />,
   },
-  { path: "/movie/:id", element: <Info /> },
+  { path: "/movie/:id", element: <Details /> },
   {
     path: "/tv",
     element: <TvPage />,

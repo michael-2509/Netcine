@@ -1,27 +1,24 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import NavBar from "../NavBar/NavBar";
 // import SearchBar from "../SearchBar.js/SearchBar";
 import useHttp from "../../hooks/use-http";
-import { getDetails } from "../../lib/api";
 
 import InfoList from "./InfoList";
+import InfoSkeleton from "../InfoSkeleton";
 
-const Info = () => {
+const Info = ({ endpoint }) => {
   const params = useParams();
-  const { sendRequest, status, data, error } = useHttp(getDetails, true);
+  const { sendRequest, status, data, error } = useHttp(endpoint, true);
   const movie = "movie";
   const { id } = params;
-
-  console.log(data);
 
   useEffect(() => {
     sendRequest(movie, id);
   }, [sendRequest, movie, id]);
 
   if (status === "pending") {
-    return <p className="text-white">E dey Load, calm down</p>;
+    return <InfoSkeleton />;
   }
 
   if (error) {
@@ -33,8 +30,6 @@ const Info = () => {
   }
   return (
     <>
-      <NavBar />
-      {/* <SearchBar /> */}
       <InfoList data={data} />
     </>
   );

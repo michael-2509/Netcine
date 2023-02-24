@@ -32,7 +32,6 @@ const InfoList = ({ data }) => {
   //   console.log(genreList);
   return (
     <>
-      {" "}
       <section className="bg-semi-dark-blue">
         <section className=" border-white bg-dark-blue py-4 pl-4 ">
           <h1 className="text-heading-lg font-thin text-white">{title}</h1>
@@ -63,10 +62,8 @@ const InfoList = ({ data }) => {
             <p className="text-white">{newRating}</p>{" "}
             <Rating
               className="empty-icons filled-icons"
-              fillClassName="-weblit-inline-box"
-              emptyClassName="flex"
-              SVGclassName="inline-block"
-              SVGstyle={{ display: "inline-block" }}
+              emptyStyle={{ display: "flex" }}
+              fillStyle={{ display: "-webkit-inline-box" }}
               size={50}
               iconsCount={5}
               initialValue={newRating}
