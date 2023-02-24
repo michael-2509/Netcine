@@ -36,7 +36,10 @@ const Trending = ({
     return <p className="text-white">No loaded movies</p>;
   }
 
-  if (isHomePage) {
+  //logic to transform data for trending section
+  if (isTrending && isHomePage) {
+    newData = slicedArray(data, 15);
+  } else if (isHomePage) {
     newData = slicedArray(data, 4);
   } else {
     newData = data;
