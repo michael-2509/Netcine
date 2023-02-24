@@ -13,7 +13,7 @@ const CollectionItem = ({
 }) => {
   return (
     <>
-      <article className="mb-5">
+      <article className="relative mb-4">
         <div>
           <Link to={`/movie/${id}`}>
             <img
@@ -26,7 +26,7 @@ const CollectionItem = ({
               alt="images"
             />
           </Link>
-          <div className={isTrending ? "relative bottom-16 left-2" : ""}>
+          <div className={isTrending ? "absolute bottom-4 left-2" : ""}>
             <div>
               <div className="flex items-center ">
                 {" "}
