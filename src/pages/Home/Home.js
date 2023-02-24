@@ -19,6 +19,7 @@ const Home = () => {
       <Collection
         isTrending
         isHomePage
+        category="trending"
         endPoint={getTrending}
         title="Trending"
         type="both"

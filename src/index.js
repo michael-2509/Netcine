@@ -16,6 +16,7 @@ import TopRatedTv from "./pages/TvShow/TopRatedTv";
 import AiringTv from "./pages/TvShow/AiringTv";
 import Info from "./components/Info/Info";
 import SearchPage from "./pages/SearchPage";
+import Trending from "./pages/Movies/Trending";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/movie",
     element: <MoviesPage />,
+  },
+  {
+    path: "/both/trending",
+    element: <Trending />,
   },
   {
     path: "/movie/popular",

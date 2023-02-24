@@ -10,7 +10,7 @@ const TopRatedTv = () => {
       <SearchBar />
       <VideoCollection
         endPoint={getTopRatedMovies}
-        title="Popular Movies"
+        title="Top Rated TV"
         type="tv"
       />
     </>
