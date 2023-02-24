@@ -17,6 +17,7 @@ import AiringTv from "./pages/TvShow/AiringTv";
 import Info from "./components/Info/Info";
 import SearchPage from "./pages/SearchPage";
 import Trending from "./pages/Movies/Trending";
+import Bookmark from "./pages/BookmarkPage";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,11 @@ const router = createBrowserRouter([
   {
     path: "/tv/genre/:id",
     element: <TvGenre />,
+  },
+
+  {
+    path: "/bookmark",
+    element: <Bookmark />,
   },
   {
     path: "/search/all/:title",
