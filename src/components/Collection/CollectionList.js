@@ -23,7 +23,7 @@ const CollectionList = ({
           className={
             isTrending
               ? "h-scroll flex gap-4 overflow-x-scroll"
-              : "grid grid-cols-2 gap-x-4"
+              : "grid grid-cols-2 gap-x-4 md:grid-cols-3"
           }
         >
           {data.map((item) => (

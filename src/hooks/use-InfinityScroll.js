@@ -43,12 +43,14 @@ const useInfinityScroll = (endPoint, type) => {
       document.body.scrollHeight - 50
     ) {
       setFetch(true);
+      console.log("scroll");
     }
   }, []);
 
   //listen to listen to the onScroll function
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 

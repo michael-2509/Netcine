@@ -29,7 +29,7 @@ const InfoList = ({ data }) => {
 
   // use map object to iterate over genres
   //   const genreList = new Map(genres);
-  //   console.log(genreList);
+  console.log(data);
   return (
     <>
       <section className="bg-semi-dark-blue">
@@ -45,6 +45,7 @@ const InfoList = ({ data }) => {
           <img
             src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
             alt={title}
+            className="bg-background w-full"
           />
           <div className="border-b  border-gray-blue py-4 px-4">
             <div className="flex gap-2 pb-4 ">
@@ -56,7 +57,7 @@ const InfoList = ({ data }) => {
                 );
               })}
             </div>
-            <p className="font-thin text-white">{`${overview}`}</p>
+            <p className="font-thin text-white md:text-heading-xs">{`${overview}`}</p>
           </div>
           <div className="py-4 text-center">
             <p className="text-white">{newRating}</p>{" "}
@@ -112,30 +113,32 @@ const InfoList = ({ data }) => {
             </div>
           )}
         </section>
-        <section className="mb-4 bg-dark-blue px-4 py-4">
-          <p className="mb-4 border-l-4 border-red pl-4 text-heading-lg text-white">
-            Similar
-          </p>
-          <div className="flex gap-4 overflow-x-scroll">
-            {" "}
-            {results.map(({ title, backdrop_path: image, poster_path }) => {
-              return (
-                <article className=" bg-semi-dark-blue">
-                  {" "}
-                  <img
-                    className="h-60 w-40 max-w-none object-cover"
-                    src={
-                      `https://image.tmdb.org/t/p/w500/${image}` ||
-                      `https://image.tmdb.org/t/p/w500/${poster_path}}`
-                    }
-                    alt={title}
-                  />
-                  <p className="px-4 pt-2 text-body-md text-white">{title}</p>
-                </article>
-              );
-            })}
-          </div>
-        </section>
+        {results && (
+          <section className="mb-4 bg-dark-blue px-4 py-4">
+            <p className="mb-4 border-l-4 border-red pl-4 text-heading-lg text-white">
+              Similar
+            </p>
+            <div className=" hide-scrollbar flex gap-4 overflow-x-scroll">
+              {" "}
+              {results.map(({ title, backdrop_path: image, poster_path }) => {
+                return (
+                  <article className=" bg-semi-dark-blue">
+                    {" "}
+                    <img
+                      className="h-60 w-40 max-w-none object-cover"
+                      src={
+                        `https://image.tmdb.org/t/p/w500/${image}` ||
+                        `https://image.tmdb.org/t/p/w500/${poster_path}}`
+                      }
+                      alt={title}
+                    />
+                    <p className="px-4 pt-2 text-body-md text-white">{title}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <section className="bg-dark-blue py-10">
           <p className=" px-4 text-center  text-white">Powered by TMDB </p>

@@ -40,7 +40,7 @@ const Trending = ({
   if (isTrending && isHomePage) {
     newData = slicedArray(data, 15);
   } else if (isHomePage) {
-    newData = slicedArray(data, 4);
+    newData = slicedArray(data, 12);
   } else {
     newData = data;
   }

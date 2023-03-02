@@ -7,7 +7,7 @@ const MovieSkeleton = () => {
       <h2 className="m-auto w-[90%] pb-4 ">
         <Skeleton width={100} height={20} />
       </h2>
-      <section className=" m-auto grid w-[90%] grid-cols-2">
+      <section className=" m-auto grid w-[90%] grid-cols-2 md:grid-cols-3">
         {Array(13)
           .fill(0)
           .map((item) => (
