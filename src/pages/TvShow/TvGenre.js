@@ -18,14 +18,16 @@ const TvGenre = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <Collection
-        isGenre
-        endPoint={getDiscovery}
-        id={id}
-        type="tv"
-        title={title}
-      />
+      <main className="lg:ml-24">
+        <SearchBar />
+        <Collection
+          isGenre
+          endPoint={getDiscovery}
+          id={id}
+          type="tv"
+          title={title}
+        />
+      </main>
     </>
   );
 };

@@ -26,7 +26,8 @@ const SearchBar = () => {
         <input
           value={search}
           onChange={searchChangeHandler}
-          className=" text-base  w-full bg-dark-blue text-white opacity-50 outline-none focus:border-b-2 focus:border-gray-blue focus:opacity-100 md:text-heading-md"
+          className="text-base  w-full bg-dark-blue text-white opacity-50 outline-none placeholder:font-thin
+           focus:border-b-2 focus:border-gray-blue focus:opacity-100 md:text-heading-md"
           placeholder="search for movies or TV series"
         />
       </form>

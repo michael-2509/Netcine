@@ -23,7 +23,7 @@ const CollectionList = ({
           className={
             isTrending
               ? "h-scroll flex gap-4 overflow-x-scroll"
-              : "grid grid-cols-2 gap-x-4 md:grid-cols-3"
+              : "grid grid-cols-2 gap-x-4 md:grid-cols-3 lg:grid-cols-4"
           }
         >
           {data.map((item) => (
@@ -34,7 +34,12 @@ const CollectionList = ({
                 isTrending={isTrending}
                 image={item.backdrop_path || item.poster_path}
                 media_type={item.media_type}
-                title={item.original_title || item.original_name}
+                title={
+                  item.title ||
+                  item.name ||
+                  item.original_title ||
+                  item.original_name
+                }
                 year={item.release_date || item.first_air_date}
                 type={type}
               />

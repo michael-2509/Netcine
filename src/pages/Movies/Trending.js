@@ -7,8 +7,11 @@ const Trending = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <VideoCollection endPoint={getTrending} title="Trending" type="movie" />
+
+      <main className="lg:ml-24">
+        <SearchBar />
+        <VideoCollection endPoint={getTrending} title="Trending" type="movie" />
+      </main>
     </>
   );
 };

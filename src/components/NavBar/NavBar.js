@@ -11,12 +11,12 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      <section className="flex justify-between bg-semi-dark-blue py-5 px-4">
+      <nav className="flex justify-between bg-semi-dark-blue py-5 px-4 lg:fixed lg:h-screen lg:flex-col">
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
 
-        <div className="flex  gap-5">
+        <div className="flex  gap-5 lg:flex-col">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -55,7 +55,7 @@ const NavBar = () => {
         <div>
           <img className="w-6" src={avatar} alt="" />
         </div>
-      </section>
+      </nav>
     </>
   );
 };

@@ -7,8 +7,10 @@ const MoviesPage = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <Genre endpoint={getGenre} media_type="movie" />
+      <main className="lg:ml-24">
+        <SearchBar />
+        <Genre endpoint={getGenre} media_type="movie" />
+      </main>
     </>
   );
 };

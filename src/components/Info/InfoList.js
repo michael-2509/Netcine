@@ -41,14 +41,14 @@ const InfoList = ({ data }) => {
             <p className=" text-body-md font-thin  text-white">{time}</p>
           </div>
         </section>
-        <section className="mb-4  bg-dark-blue">
+        <section className="mb-4  bg-dark-blue  lg:flex">
           <img
             src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
             alt={title}
             className="bg-background w-full"
           />
-          <div className="border-b  border-gray-blue py-4 px-4">
-            <div className="flex gap-2 pb-4 ">
+          <div className="   py-4 px-4">
+            <div className=" flex gap-2 pb-4 ">
               {genres.map(({ name }) => {
                 return (
                   <p className="flex border border-gray-blue py-1 px-2 text-body-md font-thin text-white">
@@ -57,22 +57,22 @@ const InfoList = ({ data }) => {
                 );
               })}
             </div>
-            <p className="font-thin text-white md:text-heading-xs">{`${overview}`}</p>
-          </div>
-          <div className="py-4 text-center">
-            <p className="text-white">{newRating}</p>{" "}
-            <Rating
-              className="empty-icons filled-icons"
-              emptyStyle={{ display: "flex" }}
-              fillStyle={{ display: "-webkit-inline-box" }}
-              size={50}
-              iconsCount={5}
-              initialValue={newRating}
-              allowFraction
-              emptyIcon={<FaRegStar />}
-              fillIcon={<FaStar />}
-              readonly
-            />
+            <p className="pb-4 font-thin text-white md:text-heading-xs">{`${overview}`}</p>
+            <div className="border-t border-gray-blue py-4 text-center">
+              <p className="text-white">{newRating}</p>{" "}
+              <Rating
+                className="empty-icons filled-icons"
+                emptyStyle={{ display: "flex" }}
+                fillStyle={{ display: "-webkit-inline-box" }}
+                size={50}
+                iconsCount={5}
+                initialValue={newRating}
+                allowFraction
+                emptyIcon={<FaRegStar />}
+                fillIcon={<FaStar />}
+                readonly
+              />
+            </div>
           </div>
         </section>
         <section className="mb-4 bg-dark-blue py-4 px-4">

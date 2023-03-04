@@ -7,12 +7,15 @@ const UpcomingMovies = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <VideoCollection
-        endPoint={getUpcomingMovies}
-        title="Up Coming Movies"
-        type="movie"
-      />
+      <main className="lg:ml-24">
+        {" "}
+        <SearchBar />
+        <VideoCollection
+          endPoint={getUpcomingMovies}
+          title="Up Coming Movies"
+          type="movie"
+        />
+      </main>
     </>
   );
 };

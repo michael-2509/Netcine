@@ -5,9 +5,9 @@ const Bookmark = () => {
   return (
     <>
       <NavBar />
-      <h1 className="text mt-8 block text-center text-heading-md text-white">
-        No Bookmark yet
-      </h1>
+      <main className="flex h-screen items-center justify-center ">
+        <h1 className=" mt-8  text-heading-md text-white">No Bookmark yet</h1>
+      </main>
     </>
   );
 };

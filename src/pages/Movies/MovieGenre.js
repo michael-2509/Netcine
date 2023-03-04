@@ -20,14 +20,17 @@ const MovieGenre = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <Collection
-        isGenre
-        endPoint={getDiscovery}
-        id={id}
-        title={title}
-        type="movie"
-      />
+      <main className="lg:ml-24">
+        {" "}
+        <SearchBar />
+        <Collection
+          isGenre
+          endPoint={getDiscovery}
+          id={id}
+          title={title}
+          type="movie"
+        />
+      </main>
     </>
   );
 };

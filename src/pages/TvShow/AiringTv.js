@@ -7,8 +7,10 @@ const AiringTv = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <VideoCollection endPoint={getOntheAir} title="On the Air" type="tv" />
+      <main className="lg:ml-24">
+        <SearchBar />
+        <VideoCollection endPoint={getOntheAir} title="On the Air" type="tv" />
+      </main>
     </>
   );
 };

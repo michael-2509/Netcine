@@ -31,6 +31,7 @@ export const getPopularMovies = async (media_type, page) => {
 
   const data = await response.json();
   const { results } = data;
+  console.log(results);
   return results;
 };
 

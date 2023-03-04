@@ -7,12 +7,15 @@ const PopularTv = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <VideoCollection
-        endPoint={getPopularMovies}
-        title="Popular TV"
-        type="tv"
-      />
+
+      <main className="lg:ml-24">
+        <main className="lg:ml-24"></main> <SearchBar />
+        <VideoCollection
+          endPoint={getPopularMovies}
+          title="Popular TV"
+          type="tv"
+        />
+      </main>
     </>
   );
 };

@@ -7,7 +7,9 @@ const Details = () => {
   return (
     <>
       <NavBar />
-      <Info endpoint={getDetails} />
+      <main className="lg:ml-24">
+        <Info endpoint={getDetails} />
+      </main>
     </>
   );
 };

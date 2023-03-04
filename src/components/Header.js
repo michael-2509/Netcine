@@ -6,7 +6,7 @@ const Header = ({ category, title, type, isHomePage }) => {
     <section className=" text-white ">
       <div className="mb-5 flex items-center justify-between ">
         {" "}
-        <div className=" flex items-center gap-2">
+        <div className=" flex items-baseline gap-2">
           {" "}
           <h2 className=" text-xl font-light text-white md:text-heading-lg">
             {title}

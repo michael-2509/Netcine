@@ -17,13 +17,21 @@ const cardSkeleton = ({ isTrending, media_type, year, movie, tv }) => {
         </div>
 
         <div
-          className={isTrending ? " flex gap-4" : "grid grid-cols-2 gap-x-4"}
+          className={
+            isTrending
+              ? " flex gap-4 "
+              : "grid grid-cols-2 gap-x-4 lg:grid-cols-4"
+          }
         >
           {Array(10)
             .fill(0)
             .map((item, index) => (
               <div key={index}>
-                <Skeleton width={`100%`} height={110} />
+                <Skeleton
+                  width={`100%`}
+                  height={110}
+                  className={isTrending ? "lg:w-[470px]" : ""}
+                />
                 <div className={isTrending ? " opacity-0" : ""}>
                   <p>
                     <Skeleton width={100} height={10} />

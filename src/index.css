@@ -7,15 +7,13 @@
 
 @layer base {
   body {
-    @apply bg-dark-blue
+    @apply bg-dark-blue;
+    font-family: 'outfit';
   }
   
   /* I used layer component because outfit is not a default font family */
   @layer components {
-    body {
-      font-family: 'outfit';
-    }
-
+  
     .heading-lg {
       @apply text-heading-lg font-light;
     }
@@ -49,6 +47,10 @@
     }
     .filled-icons {
       display: -webkit-inline-box !important;
+    }
+
+    .input-placeHolder {
+      @apply 
     }
 
     .background {

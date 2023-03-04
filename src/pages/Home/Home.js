@@ -12,62 +12,60 @@ import {
 const Home = () => {
   return (
     <>
-      <section className="lg:flex">
-        <NavBar />
-        <section>
-          <SearchBar />
-          <Collection
-            isTrending
-            isHomePage
-            category="trending"
-            endPoint={getTrending}
-            title="Trending"
-            type="both"
-          />
-          <Collection
-            isHomePage
-            category="popular"
-            endPoint={getPopularMovies}
-            title="Popular"
-            type="movie"
-          />
-          <Collection
-            isHomePage
-            category="popular"
-            endPoint={getPopularMovies}
-            title="Popular"
-            type="tv"
-          />
-          <Collection
-            isHomePage
-            category="toprated"
-            endPoint={getTopRatedMovies}
-            title="Top Rated"
-            type="movie"
-          />
-          <Collection
-            isHomePage
-            category="toprated"
-            endPoint={getTopRatedMovies}
-            title="Top Rated"
-            type="tv"
-          />
-          <Collection
-            isHomePage
-            category="upcoming"
-            endPoint={getUpcomingMovies}
-            title="Upcoming"
-            type="movie"
-          />
-          <Collection
-            isHomePage
-            category="airing"
-            endPoint={getOntheAir}
-            title="On the Air"
-            type="tv"
-          />
-        </section>
-      </section>
+      <NavBar />
+      <main className="lg:ml-24">
+        <SearchBar />
+        <Collection
+          isTrending
+          isHomePage
+          category="trending"
+          endPoint={getTrending}
+          title="Trending"
+          type="both"
+        />
+        <Collection
+          isHomePage
+          category="popular"
+          endPoint={getPopularMovies}
+          title="Popular"
+          type="movie"
+        />
+        <Collection
+          isHomePage
+          category="popular"
+          endPoint={getPopularMovies}
+          title="Popular"
+          type="tv"
+        />
+        <Collection
+          isHomePage
+          category="toprated"
+          endPoint={getTopRatedMovies}
+          title="Top Rated"
+          type="movie"
+        />
+        <Collection
+          isHomePage
+          category="toprated"
+          endPoint={getTopRatedMovies}
+          title="Top Rated"
+          type="tv"
+        />
+        <Collection
+          isHomePage
+          category="upcoming"
+          endPoint={getUpcomingMovies}
+          title="Upcoming"
+          type="movie"
+        />
+        <Collection
+          isHomePage
+          category="airing"
+          endPoint={getOntheAir}
+          title="On the Air"
+          type="tv"
+        />
+      </main>
     </>
   );
 };
