@@ -1,4 +1,3 @@
-
 # Frontend Mentor - Entertainment web app solution
 
 ## Table of contents
@@ -25,7 +24,9 @@ on the more page.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+### mobile
+
+![](./public/Preview/Mobile.png)
 
 ### Links
 
@@ -63,4 +64,3 @@ It also includes a search feature that enables user search for movies and TV sho
 
 - Solution URL: [https://github.com/michael-2509/Netcine](https://your-solution-url.com)
 - Live Site URL: [https://netcine.netlify.app](https://your-live-site-url.com)
-
