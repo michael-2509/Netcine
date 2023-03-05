@@ -36,3 +36,31 @@ on the more page.
 
 - Solution URL: [https://github.com/michael-2509/Netcine](https://your-solution-url.com)
 - Live Site URL: [https://netcine.netlify.app](https://your-live-site-url.com)
+
+### Built with
+
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Tailwind](https://tailwindcss.com/) - Utility-first CSS framework.
+- [Styled Components](https://styled-components.com/) - For styles
+
+
+### What I learned
+
+To see how you can add code snippets, see below:
+
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
+```js
+const proudOfThisFunc = () => {
+  console.log('🎉')
+}
+```
+
+If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.

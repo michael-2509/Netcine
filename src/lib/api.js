@@ -1,7 +1,7 @@
 import { slicedArray } from "../utils";
 
 const TMDB_DOMAIN = "https://api.themoviedb.org/3";
-const API_KEY = "e771c8f2e777b71534e7f5feb2c49c8a";
+const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
 //trending videos
 export const getTrending = async () => {
