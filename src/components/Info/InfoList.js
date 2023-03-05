@@ -7,7 +7,9 @@ import { slicedArray, timeConversion } from "../../utils/index";
 const InfoList = ({ data }) => {
   const {
     title,
+    name,
     release_date,
+    first_air_date,
     runtime,
     backdrop_path,
     overview,
@@ -17,7 +19,7 @@ const InfoList = ({ data }) => {
     recommendations,
   } = data;
 
-  const year = slicedArray(release_date, 4);
+  const year = slicedArray(`${release_date || first_air_date}`, 4);
   const time = timeConversion(runtime);
   const { cast, crew } = credits;
   const newCast = slicedArray(cast, 10);
@@ -34,7 +36,9 @@ const InfoList = ({ data }) => {
     <>
       <section className="bg-semi-dark-blue">
         <section className=" border-white bg-dark-blue py-4 pl-4 ">
-          <h1 className="text-heading-lg font-thin text-white">{title}</h1>
+          <h1 className="text-heading-lg font-thin text-white">{`${
+            name || title
+          }`}</h1>
           <div className="flex gap-4 opacity-50">
             {" "}
             <p className=" font-thin text-white">{year}</p>
@@ -45,7 +49,7 @@ const InfoList = ({ data }) => {
           <img
             src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
             alt={title}
-            className="bg-background w-full"
+            className="bg-background w-full object-cover"
           />
           <div className="   py-4 px-4">
             <div className=" flex gap-2 pb-4 ">
@@ -96,13 +100,15 @@ const InfoList = ({ data }) => {
               );
             })}
           </div>
-          <div className="pt-4">
-            <h1 className="text-white">Director</h1>
-            <p className="text-body-md font-thin text-white opacity-50">
-              {" "}
-              {director.name}
-            </p>
-          </div>
+          {release_date && (
+            <div className="pt-4">
+              <h1 className="text-white">Director</h1>
+              <p className="text-body-md font-thin text-white opacity-50">
+                {" "}
+                {director.name}
+              </p>
+            </div>
+          )}
           {writer && (
             <div className="pt-4">
               && <h1 className="text-white">Writer</h1>

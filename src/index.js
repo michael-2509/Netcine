@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     path: "/movie/genre/:id",
     element: <MovieGenre />,
   },
-  { path: "/movie/:id", element: <Details /> },
+  { path: "/:media_type/:id", element: <Details /> },
   {
     path: "/tv",
     element: <TvPage />,
@@ -69,6 +69,8 @@ const router = createBrowserRouter([
     path: "/tv/genre/:id",
     element: <TvGenre />,
   },
+
+  { path: "/:media_type/:id", element: <Details /> },
 
   {
     path: "/bookmark",

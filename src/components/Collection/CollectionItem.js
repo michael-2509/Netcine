@@ -15,7 +15,7 @@ const CollectionItem = ({
     <>
       <article className="relative mb-4">
         <div>
-          <Link to={`/movie/${id}`}>
+          <Link to={`/${media_type || type}/${id}`}>
             <img
               className={
                 isTrending

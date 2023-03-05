@@ -10,12 +10,11 @@ import InfoSkeleton from "../InfoSkeleton";
 const Info = ({ endpoint }) => {
   const params = useParams();
   const { sendRequest, status, data, error } = useHttp(endpoint, true);
-  const movie = "movie";
-  const { id } = params;
+  const { id, media_type } = params;
 
   useEffect(() => {
-    sendRequest(movie, id);
-  }, [sendRequest, movie, id]);
+    sendRequest(media_type, id);
+  }, [sendRequest, media_type, id]);
 
   if (status === "pending") {
     return <InfoSkeleton />;

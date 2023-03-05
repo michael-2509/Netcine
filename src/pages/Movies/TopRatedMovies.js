@@ -7,7 +7,7 @@ const TopRatedMovies = () => {
   return (
     <>
       <NavBar />
-      <main className="lg:ml-24">
+      <main className="lg:ml-32">
         {" "}
         <SearchBar />
         <VideoCollection

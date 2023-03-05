@@ -8,7 +8,7 @@ const PopularMovies = () => {
     <>
       <NavBar />
 
-      <main className="lg:ml-24">
+      <main className="lg:ml-36">
         <SearchBar />
         <VideoCollection
           endPoint={getPopularMovies}
