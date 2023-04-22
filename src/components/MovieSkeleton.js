@@ -10,8 +10,8 @@ const MovieSkeleton = () => {
       <section className=" m-auto grid w-[90%] grid-cols-2 md:grid-cols-3">
         {Array(13)
           .fill(0)
-          .map((item) => (
-            <div className=" gap-2 py-2 pl-2">
+          .map((index) => (
+            <div key={index} className=" gap-2 py-2 pl-2">
               <p className="text-white">
                 <Skeleton width={160} height={40} />
               </p>

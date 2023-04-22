@@ -8,7 +8,10 @@ const GenreList = ({ data, media_type }) => {
       <section className=" m-auto grid w-[90%] grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {" "}
         {data.map((item, index) => (
-          <Link to={`/${media_type}/genre/${item.id}?name=${item.name}`}>
+          <Link
+            to={`/${media_type}/genre/${item.id}?name=${item.name}`}
+            key={index}
+          >
             <GenreItem key={index} name={item.name} />
           </Link>
         ))}

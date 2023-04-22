@@ -1,7 +1,7 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const cardSkeleton = ({ isTrending, media_type, year, movie, tv }) => {
+const cardSkeleton = ({ isTrending }) => {
   return (
     <SkeletonTheme baseColor="#202020" highlightColor="#444">
       <section className="mb-5 px-4">

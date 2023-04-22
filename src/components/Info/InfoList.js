@@ -51,9 +51,12 @@ const InfoList = ({ data }) => {
         />
         <div className="   py-4 px-4">
           <div className=" flex gap-2 pb-4 ">
-            {genres.map(({ name }) => {
+            {genres.map(({ name }, index) => {
               return (
-                <p className="flex border border-gray-blue py-1 px-2 text-body-md font-thin text-white">
+                <p
+                  key={index}
+                  className="flex border border-gray-blue py-1 px-2 text-body-md font-thin text-white"
+                >
                   {name}
                 </p>
               );
@@ -81,9 +84,9 @@ const InfoList = ({ data }) => {
         <p className="mb-4 border-l-4  border-red pl-4 text-white">CAST</p>
         <div className="hide-scrollbar flex gap-4 overflow-x-scroll">
           {" "}
-          {newCast.map(({ name, profile_path: image, character }) => {
+          {newCast.map(({ name, profile_path: image, character }, index) => {
             return (
-              <article className="rounded-lg bg-semi-dark-blue">
+              <article key={index} className="rounded-lg bg-semi-dark-blue">
                 {" "}
                 <img
                   className="h-60 w-40 max-w-none object-cover"
@@ -124,22 +127,24 @@ const InfoList = ({ data }) => {
           </p>
           <div className=" hide-scrollbar flex gap-4 overflow-x-scroll">
             {" "}
-            {results.map(({ title, backdrop_path: image, poster_path }) => {
-              return (
-                <article className=" bg-semi-dark-blue">
-                  {" "}
-                  <img
-                    className="h-60 w-40 max-w-none object-cover"
-                    src={
-                      `https://image.tmdb.org/t/p/w500/${image}` ||
-                      `https://image.tmdb.org/t/p/w500/${poster_path}}`
-                    }
-                    alt={title}
-                  />
-                  <p className="px-4 pt-2 text-body-md text-white">{title}</p>
-                </article>
-              );
-            })}
+            {results.map(
+              ({ title, backdrop_path: image, poster_path }, index) => {
+                return (
+                  <article className=" bg-semi-dark-blue" key={index}>
+                    {" "}
+                    <img
+                      className="h-60 w-40 max-w-none object-cover"
+                      src={
+                        `https://image.tmdb.org/t/p/w500/${image}` ||
+                        `https://image.tmdb.org/t/p/w500/${poster_path}}`
+                      }
+                      alt={title}
+                    />
+                    <p className="px-4 pt-2 text-body-md text-white">{title}</p>
+                  </article>
+                );
+              }
+            )}
           </div>
         </section>
       )}
