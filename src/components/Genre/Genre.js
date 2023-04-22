@@ -20,7 +20,7 @@ const Genre = ({ endpoint, media_type }) => {
     return <p className="text-white">{error}</p>;
   }
 
-  if (status === "complete" && (!data || data.length < 0)) {
+  if (status === "complete" && (!data || data.length === 0)) {
     return <p className="text-white">No loaded movies</p>;
   }
 
