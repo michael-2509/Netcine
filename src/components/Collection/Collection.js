@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useHttp from "../../hooks/use-http";
-import { slicedArray } from "../../utils";
+import { filterData, slicedArray } from "../../utils";
 import CardSkeleton from "../CardSkeleton";
 
 import CollectionList from "./CollectionList";
@@ -42,7 +42,7 @@ const Trending = ({
   } else if (isHomePage) {
     newData = slicedArray(data, 12);
   } else {
-    newData = data;
+    newData = filterData(data);
   }
 
   return (

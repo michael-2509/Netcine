@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import SearchBar from "../../components/SearchBar.js/SearchBar";
 import Collection from "../../components/Collection/Collection";
@@ -66,6 +67,8 @@ const Home = () => {
           type="tv"
         />
       </main>
+
+      <Footer />
     </>
   );
 };

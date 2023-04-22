@@ -14,3 +14,12 @@ export const timeConversion = (runtime) => {
   const minutes = runtime % 60;
   return `${hours}h ${minutes}m`;
 };
+
+//filter
+export const filterData = (data) => {
+  return data.filter(
+    (item) =>
+      (item.backdrop_path !== null || item.poster_path !== null) &&
+      item.media_type !== "person"
+  );
+};

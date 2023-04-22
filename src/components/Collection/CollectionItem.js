@@ -20,7 +20,7 @@ const CollectionItem = ({
               className={
                 isTrending
                   ? " h-[140px] w-60 max-w-none rounded-lg object-cover opacity-50 md:h-[230px] md:w-[470px]"
-                  : "h-[110px]  max-w-full rounded-lg object-cover md:h-[140px]  lg:h-[200px] lg:w-[400px] "
+                  : "h-[110px] w-full max-w-full rounded-lg object-cover md:h-[140px]  lg:h-[200px] lg:w-[400px] "
               }
               src={`${"https://image.tmdb.org/t/p/w500/"}${image}`}
               alt="images"
@@ -49,7 +49,9 @@ const CollectionItem = ({
                   )}
                 </div>
               </div>
-              <p className="text-sm font-medium md:text-heading-xs">{title}</p>
+              <p className="text-body-md font-medium md:text-heading-xs">
+                {title}
+              </p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Header = ({ category, title, type, isHomePage }) => {
         {" "}
         <div className=" flex items-baseline gap-2">
           {" "}
-          <h2 className=" text-xl font-light text-white md:text-heading-lg">
+          <h2 className=" text-heading-md font-light text-white md:text-heading-lg">
             {title}
           </h2>
           <MediaTypeIcon type={type} />

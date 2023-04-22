@@ -12,12 +12,15 @@ const SearchPage = () => {
   return (
     <>
       <NavBar />
-      <SearchBar />
-      <h1 className="text-heading-sm text-white">
+      <main className="lg:ml-32">
         {" "}
-        Found 20 results found for "{title}"
-      </h1>
-      <Collection endPoint={getSearch} search={title} />
+        <SearchBar />
+        <h1 className="px-4 text-heading-sm font-light text-white">
+          {" "}
+          Found results found for "{title}"
+        </h1>
+        <Collection endPoint={getSearch} search={title} />
+      </main>
     </>
   );
 };

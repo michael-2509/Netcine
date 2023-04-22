@@ -13,7 +13,7 @@ const NavBar = () => {
     <>
       <nav
         className="flex justify-between rounded-2xl bg-semi-dark-blue
-       py-5 px-4 lg:fixed lg:left-8 lg:mt-[5%] lg:h-[90%]
+       py-5 px-4 lg:fixed lg:left-8 lg:my-[5%] lg:h-[90%]
        lg:w-24 lg:flex-col lg:items-center"
       >
         <NavLink to="/">
