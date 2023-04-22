@@ -19,7 +19,7 @@ const VideoCollection = ({ endPoint, title, type, isTrending }) => {
     return <p className="text-center text-white">{error}</p>;
   }
 
-  if (status === "completed" && (!data || data.length < 0)) {
+  if (status === "completed" && (!data || data.length === 0)) {
     return <p className="text-white">No loaded movies</p>;
   }
 
