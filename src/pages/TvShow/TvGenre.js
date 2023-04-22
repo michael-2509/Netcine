@@ -8,7 +8,7 @@ import { getDiscovery } from "../../lib/api";
 const TvGenre = () => {
   //returns the id of dynamic param for the tv show genre from the url
   const { id } = useParams();
-  console.log(id);
+  
 
   //returns the name of querry string for the tv show genre from the url
   const location = useLocation();
