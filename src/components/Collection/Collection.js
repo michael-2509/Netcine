@@ -18,7 +18,7 @@ const Trending = ({
   const { sendRequest, data, error, status } = useHttp(endPoint, true);
 
   let newData = [];
-  let page = 1;
+  const page = 1;
 
   useEffect(() => {
     sendRequest(type, id, search);

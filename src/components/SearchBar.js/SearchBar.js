@@ -17,21 +17,16 @@ const SearchBar = () => {
   };
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        className="flex items-center gap-4 px-4 py-6"
-      >
-        <img src={searchIcon} alt="search icon" />
-        <input
-          value={search}
-          onChange={searchChangeHandler}
-          className="text-base  w-full bg-dark-blue text-white opacity-50 outline-none placeholder:font-thin
+    <form onSubmit={handleSubmit} className="flex items-center gap-4 px-4 py-6">
+      <img src={searchIcon} alt="search icon" />
+      <input
+        value={search}
+        onChange={searchChangeHandler}
+        className="text-base  w-full bg-dark-blue text-white opacity-50 outline-none placeholder:font-thin
            focus:border-b-2 focus:border-gray-blue focus:opacity-100 md:text-heading-md"
-          placeholder="search for movies or TV series"
-        />
-      </form>
-    </>
+        placeholder="search for movies or TV series"
+      />
+    </form>
   );
 };
 

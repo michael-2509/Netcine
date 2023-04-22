@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import useHttp from "../hooks/use-http";
+import useHttp from "./use-http";
 
 const useInfinityScroll = (endPoint, type) => {
   const [page, setPage] = useState(1);
@@ -43,7 +43,6 @@ const useInfinityScroll = (endPoint, type) => {
       document.body.scrollHeight - 50
     ) {
       setFetch(true);
-      
     }
   }, []);
 
@@ -58,8 +57,6 @@ const useInfinityScroll = (endPoint, type) => {
   const uniqueData = [
     ...new Map(updateData.map((item) => [item.id, item])).values(),
   ];
-
-  
 
   return { uniqueData, error, status, page };
 };

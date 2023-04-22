@@ -27,11 +27,7 @@ const Info = ({ endpoint }) => {
   if (status === "complete" && data === null) {
     return <p>No data avaialable now</p>;
   }
-  return (
-    <>
-      <InfoList data={data} />
-    </>
-  );
+  return <InfoList data={data} />;
 };
 
 export default Info;

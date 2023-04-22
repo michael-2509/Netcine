@@ -27,23 +27,21 @@ const CollectionList = ({
           }
         >
           {data.map((item) => (
-            <>
-              <CollectionItem
-                key={item.id}
-                id={item.id}
-                isTrending={isTrending}
-                image={item.backdrop_path || item.poster_path}
-                media_type={item.media_type}
-                title={
-                  item.title ||
-                  item.name ||
-                  item.original_title ||
-                  item.original_name
-                }
-                year={item.release_date || item.first_air_date}
-                type={type}
-              />
-            </>
+            <CollectionItem
+              key={item.id}
+              id={item.id}
+              isTrending={isTrending}
+              image={item.backdrop_path || item.poster_path}
+              media_type={item.media_type}
+              title={
+                item.title ||
+                item.name ||
+                item.original_title ||
+                item.original_name
+              }
+              year={item.release_date || item.first_air_date}
+              type={type}
+            />
           ))}
         </section>
       </section>

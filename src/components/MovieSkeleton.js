@@ -11,12 +11,7 @@ const MovieSkeleton = () => {
         {Array(13)
           .fill(0)
           .map((item) => (
-            <div
-              className=" gap-2 py-2 pl-2"
-              onClick={() => {
-                
-              }}
-            >
+            <div className=" gap-2 py-2 pl-2">
               <p className="text-white">
                 <Skeleton width={160} height={40} />
               </p>

@@ -17,7 +17,7 @@ const SearchPage = () => {
         <SearchBar />
         <h1 className="px-4 text-heading-sm font-light text-white">
           {" "}
-          Found results found for "{title}"
+          Found results found for &quot;{title}&quot;
         </h1>
         <Collection endPoint={getSearch} search={title} />
       </main>
