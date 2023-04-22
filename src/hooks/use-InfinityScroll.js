@@ -43,7 +43,7 @@ const useInfinityScroll = (endPoint, type) => {
       document.body.scrollHeight - 50
     ) {
       setFetch(true);
-      console.log("scroll");
+      
     }
   }, []);
 
@@ -59,7 +59,7 @@ const useInfinityScroll = (endPoint, type) => {
     ...new Map(updateData.map((item) => [item.id, item])).values(),
   ];
 
-  console.log(page);
+  
 
   return { uniqueData, error, status, page };
 };

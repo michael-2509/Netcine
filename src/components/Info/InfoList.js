@@ -27,11 +27,11 @@ const InfoList = ({ data }) => {
   const writer = crew.find((item) => item.job === "Writer");
   const newRating = (vote_average / 2).toFixed(1);
   const { results } = recommendations;
-  console.log(newRating);
+  
 
   // use map object to iterate over genres
   //   const genreList = new Map(genres);
-  console.log(data);
+  
   return (
     <>
       <section className="bg-semi-dark-blue">
