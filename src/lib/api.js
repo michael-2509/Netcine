@@ -116,13 +116,13 @@ export const getDetails = async (media_type, id) => {
     throw new Error("No Info available");
   }
   const data = await response.json();
-  console.log(data);
+  
   return data;
 };
 
 //search
 export const getSearch = async (type, id, query) => {
-  console.log(query);
+  
   const response = await fetch(
     `${TMDB_DOMAIN}/search/multi?api_key=${API_KEY}&language=en-US&query=${query}&page=1`
   );
@@ -132,6 +132,6 @@ export const getSearch = async (type, id, query) => {
   }
   const data = await response.json();
   const { results } = data;
-  console.log(results);
+  
   return results;
 };

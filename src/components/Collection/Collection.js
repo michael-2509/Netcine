@@ -32,7 +32,7 @@ const Trending = ({
     return <p className="text-center text-white">{error}</p>;
   }
 
-  if (status === "complete" && (!data || data.length < 0)) {
+  if (status === "complete" && (!data || data.length === 0)) {
     return <p className="text-white">No loaded movies</p>;
   }
 

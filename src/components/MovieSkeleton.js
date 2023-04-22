@@ -14,7 +14,7 @@ const MovieSkeleton = () => {
             <div
               className=" gap-2 py-2 pl-2"
               onClick={() => {
-                console.log("discover");
+                
               }}
             >
               <p className="text-white">
